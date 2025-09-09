@@ -9,15 +9,15 @@ if(button){
 }
 
 document.getElementById("search").addEventListener("click", function() {
-    window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/search.html";
+    window.location.href = "search.html";
   });
 
 document.getElementById("login").addEventListener("click", function() {
-    window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/login.html";
+    window.location.href = "login.html";
   });
 
 document.getElementById("entry").addEventListener("click", function() {
-    window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/entry.html";
+    window.location.href = "entry.html";
   });
  
 function scrollToPosition(y) {
@@ -302,3 +302,4 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 
 });
+
