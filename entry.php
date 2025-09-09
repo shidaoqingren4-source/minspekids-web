@@ -11,7 +11,7 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-$htmlBody = file_get_contents('thankyou.html');
+$htmlBody = file_get_contents('https://shidaoqingren4-source.github.io/minspekids-web/thankyou.html');
 
 $mail = new PHPMailer(true);
 
@@ -39,3 +39,4 @@ try {
     echo "メール送信に失敗しました: {$mail->ErrorInfo}";
 }
 ?>
+
