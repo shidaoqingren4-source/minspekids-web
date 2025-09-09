@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/00d55dda39.js" crossorigin="anonymous"></script>
+    <script src="login.js" defer></script>
+</head>
+<body>
+    <div class="login-container">
+    <h1 class="login">ログイン</h1>
+    <p>アカウントをお持ちの方はログインしてください</p>
+    <form action="dashboard.html" method="POST">
+      
+      <label for="email">メールアドレス</label>
+      <input type="email" id="email" name="email" required placeholder="メールアドレスを入力" autocomplete="email">
+      
+      <label for="password">パスワード</label>
+<div class="password-wrapper">
+  <input type="password" id="password" name="password" required placeholder="パスワードを入力">
+  <i id="togglePassword" class="fa-solid fa-eye eye"></i>
+
+</div>
+    <a class="forget" href="">パスワードをお忘れの方</a>
+      
+    <button id="button" type="submit" disabled>ログイン</button>
+    
+    <a class="yet" href="entry.html">アカウント未登録の方はこちら</a>
+    </form>
+  </div>   
+  <a class="return" href="index.html">ホームに戻る</a>
+</body>
+</html>
