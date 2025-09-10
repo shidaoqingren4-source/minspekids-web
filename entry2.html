@@ -12,7 +12,7 @@
     <div class="next-form-container">
         <h1>新規会員登録</h1>
         <p>アカウント登録の続きを行います</p>
-        <form action="" method="POST">
+        <form action="http://localhost/complete.php" method="POST">
                 <label for="name">お名前<span>必須</span></label>
                 <div class="name">
                 <input type="text" name="firstname" required>
@@ -20,12 +20,12 @@
             </div>
                 <label for="name-kana">お名前(カナ)<span>必須</span></label>
                 <div class="name-kana"> 
-                <input type="text" name="" required>
-                <input type="text" name="" required>
+                <input type="text" name="first-name-kana" required>
+                <input type="text" name="last-name-kana" required>
             </div>
                 <label for="post-number">郵便番号<span>必須</span></label>
                 <div class="post-number">
-                <input type="text" id="post-number" maxlength="8" required>
+                <input type="text" id="post-number" name="post-number"maxlength="8" required>
             </div>
                 <label for="address">住所<span>必須</span></label>
                 <div class="address">
@@ -125,4 +125,5 @@
         </form>
     </div>
 </body>
+
 </html>
