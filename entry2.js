@@ -151,4 +151,10 @@ document.getElementById("button").addEventListener("click", function (e) {
 
   // 条件分岐：すべてOK
   form.submit();
+
+});
+
+document.querySelector("form").addEventListener("submit", (e) => {
+  console.log("pref:", document.querySelector("#pref").value);
+  console.log("password:", document.querySelector("#password").value);
 });
