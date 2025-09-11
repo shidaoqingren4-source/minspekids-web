@@ -30,12 +30,15 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("fa-eye-slash");
 });
 
+const errorDiv = document.querySelector(".error-message");
+
 async function validateLogin() {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
   if (!email || !password) {
     loginButton.disabled = true;
+    errorDiv.textContent = "";
     return;
   }
 
@@ -50,13 +53,11 @@ async function validateLogin() {
   if (result.valid) {
     loginButton.disabled = false;
     loginButton.classList.add("active");
-    document.querySelector(".error-message").textContent = "";
+    errorDiv.textContent = "";
   } else {
     loginButton.disabled = true;
     loginButton.classList.remove("active");
-    document.querySelector(".error-message").textContent = "メールアドレスまたはパスワードが違います";
+    errorDiv.textContent = result.message || "ログインできませんでした";
+    errorDiv.style.color = "red";
   }
 }
-
-emailInput.addEventListener("input", validateLogin);
-passwordInput.addEventListener("input", validateLogin);
