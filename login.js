@@ -29,3 +29,34 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("fa-eye");
   togglePassword.classList.toggle("fa-eye-slash");
 });
+
+async function validateLogin() {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!email || !password) {
+    loginButton.disabled = true;
+    return;
+  }
+
+  const response = await fetch("check_login.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+  });
+
+  const result = await response.json();
+
+  if (result.valid) {
+    loginButton.disabled = false;
+    loginButton.classList.add("active");
+    document.querySelector(".error-message").textContent = "";
+  } else {
+    loginButton.disabled = true;
+    loginButton.classList.remove("active");
+    document.querySelector(".error-message").textContent = "メールアドレスまたはパスワードが違います";
+  }
+}
+
+emailInput.addEventListener("input", validateLogin);
+passwordInput.addEventListener("input", validateLogin);
