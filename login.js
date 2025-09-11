@@ -34,7 +34,7 @@ async function checkLogin() {
   },
   body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
 });
-});
+
 
     if (!response.ok) {
       throw new Error("サーバーエラー");
@@ -76,6 +76,7 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault();
   await checkLogin();
 });
+
 
 
 
