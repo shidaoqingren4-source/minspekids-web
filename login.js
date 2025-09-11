@@ -27,11 +27,14 @@ async function checkLogin() {
   const password = passwordInput.value.trim();
 
   try {
-    const response = await fetch("check_login.php", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
-    });
+   const response = await fetch("http://localhost/check_login.php", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded"
+  },
+  body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+});
+});
 
     if (!response.ok) {
       throw new Error("サーバーエラー");
@@ -73,3 +76,4 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault();
   await checkLogin();
 });
+
