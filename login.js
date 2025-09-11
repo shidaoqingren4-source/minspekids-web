@@ -5,23 +5,19 @@ const errorDiv = document.querySelector(".error-message");
 const togglePassword = document.getElementById("togglePassword");
 const loginForm = document.getElementById("loginForm");
 
-// 入力チェック（リアルタイム）
+// 入力チェック（リアルタイムで見た目だけ制御）
 function checkInputs() {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
   if (email && password) {
-    loginButton.disabled = false;
     loginButton.classList.add("active");
-    errorDiv.textContent = "";
   } else {
-    loginButton.disabled = true;
     loginButton.classList.remove("active");
-    errorDiv.textContent = "";
   }
 }
 
-// 認証チェック（submit時）
+// 認証チェック（submit時のみ）
 async function checkLogin() {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
@@ -41,14 +37,16 @@ async function checkLogin() {
     } else {
       errorDiv.textContent = result.message || "メールアドレスまたはパスワードが違います";
       errorDiv.style.color = "red";
+      loginButton.disabled = true;
     }
   } catch (error) {
     errorDiv.textContent = "通信エラーが発生しました";
     errorDiv.style.color = "red";
+    loginButton.disabled = true;
   }
 }
 
-// 入力イベントに反応
+// 入力イベントに反応（見た目だけ）
 emailInput.addEventListener("input", checkInputs);
 passwordInput.addEventListener("input", checkInputs);
 
@@ -63,5 +61,6 @@ togglePassword.addEventListener("click", () => {
 // フォーム送信を制御
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault();
+  loginButton.disabled = true; // 一旦無効化して二重送信防止
   await checkLogin();
 });
