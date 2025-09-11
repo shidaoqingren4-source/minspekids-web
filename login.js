@@ -3,8 +3,11 @@ const passwordInput = document.getElementById("password");
 const loginButton = document.getElementById("button");
 const errorDiv = document.querySelector(".error-message");
 const togglePassword = document.getElementById("togglePassword");
+const loginForm = document.querySelector("form");
 
-// 入力チェック＋認証チェック
+let isLoginValid = false; // 認証結果を保持
+
+// 入力チェック＋認証チェック（リアルタイム）
 async function checkInputs() {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
@@ -13,6 +16,7 @@ async function checkInputs() {
     loginButton.classList.remove("active");
     loginButton.disabled = true;
     errorDiv.textContent = "";
+    isLoginValid = false;
     return;
   }
 
@@ -29,17 +33,20 @@ async function checkInputs() {
       loginButton.classList.add("active");
       loginButton.disabled = false;
       errorDiv.textContent = "";
+      isLoginValid = true;
     } else {
       loginButton.classList.remove("active");
       loginButton.disabled = true;
       errorDiv.textContent = result.message || "メールアドレスまたはパスワードが違います";
       errorDiv.style.color = "red";
+      isLoginValid = false;
     }
   } catch (error) {
     loginButton.classList.remove("active");
     loginButton.disabled = true;
     errorDiv.textContent = "通信エラーが発生しました";
     errorDiv.style.color = "red";
+    isLoginValid = false;
   }
 }
 
@@ -54,3 +61,7 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("fa-eye");
   togglePassword.classList.toggle("fa-eye-slash");
 });
+
+// フォーム送信を制御
+loginForm.addEventListener("submit", async (e) => {
+  e.preventDefault(); // 送信
