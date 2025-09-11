@@ -30,3 +30,34 @@ togglePassword.addEventListener("click", () => {
   togglePassword.classList.toggle("fa-eye-slash");
 });
 
+const errorDiv = document.querySelector(".error-message");
+
+async function validateLogin() {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
+
+  if (!email || !password) {
+    loginButton.disabled = true;
+    errorDiv.textContent = "";
+    return;
+  }
+
+  const response = await fetch("check_login.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
+  });
+
+  const result = await response.json();
+
+  if (result.valid) {
+    loginButton.disabled = false;
+    loginButton.classList.add("active");
+    errorDiv.textContent = "";
+  } else {
+    loginButton.disabled = true;
+    loginButton.classList.remove("active");
+    errorDiv.textContent = result.message || "ログインできませんでした";
+    errorDiv.style.color = "red";
+  }
+}
