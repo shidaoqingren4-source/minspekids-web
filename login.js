@@ -27,7 +27,7 @@ async function checkLogin() {
   const password = passwordInput.value.trim();
 
   try {
-    const response = await fetch("check_login.php", {
+    const response = await fetch("http://localhost/check_login.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
@@ -69,4 +69,5 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault(); // ← ボタンが type="submit" でも送信を止める
   await checkLogin();
 });
+
 
