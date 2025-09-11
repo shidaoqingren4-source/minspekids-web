@@ -21,7 +21,7 @@ async function checkInputs() {
   }
 
   try {
-    const response = await fetch("check_login.php", {
+    const response = await fetch("login.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
@@ -65,3 +65,4 @@ togglePassword.addEventListener("click", () => {
 // フォーム送信を制御
 loginForm.addEventListener("submit", async (e) => {
   e.preventDefault(); // 送信
+
