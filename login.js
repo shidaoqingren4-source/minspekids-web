@@ -37,7 +37,7 @@ async function checkLogin() {
 
     if (result.valid) {
       // 認証成功 → ログイン後のページへ遷移
-      window.location.href = "home.html"; // ← ここは好きな遷移先に変更OK
+      window.location.href = "index.html"; // ← ここは好きな遷移先に変更OK
     } else {
       errorDiv.textContent = result.message || "メールアドレスまたはパスワードが違います";
       errorDiv.style.color = "red";
@@ -69,3 +69,4 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault(); // ← ボタンが type="submit" でも送信を止める
   await checkLogin();
 });
+
