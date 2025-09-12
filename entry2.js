@@ -158,3 +158,32 @@ document.querySelector("form").addEventListener("submit", (e) => {
   console.log("pref:", document.querySelector("#pref").value);
   console.log("password:", document.querySelector("#password").value);
 });
+
+document.querySelector("form").addEventListener("submit", async (e) => {
+  e.preventDefault(); // 通常の送信を止める
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const params = new URLSearchParams();
+
+  for (const [key, value] of formData.entries()) {
+    params.append(key, value);
+  }
+
+  try {
+    const response = await fetch("https://minspekids.wuaze.com/complete.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: params.toString()
+    });
+
+    const result = await response.text(); // PHPがJSON返すなら .json() にしてもOK
+    alert("登録が完了しました！");
+    console.log("サーバー応答:", result);
+  } catch (error) {
+    alert("通信エラーが発生しました");
+    console.error("fetchエラー:", error);
+  }
+});
