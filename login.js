@@ -36,11 +36,7 @@ togglePassword.addEventListener("click", () => {
 emailInput.addEventListener("input", checkInputs);
 passwordInput.addEventListener("input", checkInputs);
 
-// ボタン押下で認証チェック
-loginButton.addEventListener("click", async (e) => {
-  e.preventDefault();
-  await checkLogin();
-});
+
 
 
 
