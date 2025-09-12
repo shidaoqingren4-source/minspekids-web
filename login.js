@@ -40,10 +40,14 @@ const params = new URLSearchParams(window.location.search);
 const errorMessage = params.get("error");
 
 if (errorMessage) {
-  const errorDiv = document.querySelector(".error-message");
-  errorDiv.textContent = decodeURIComponent(errorMessage);
+  errorDiv.textContent = errorMessage;
   errorDiv.style.color = "red";
+
+  // 表示後にURLをクリーンアップ
+  window.history.replaceState({}, document.title, window.location.pathname);
 }
+
+
 
 
 
