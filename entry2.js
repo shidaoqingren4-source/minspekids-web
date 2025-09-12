@@ -171,7 +171,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch("https://minspekids.wuaze.com/complete.php", {
+    const response = await fetch("https://minspekids.wuaze.com/test.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/x-www-form-urlencoded"
@@ -187,3 +187,4 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     console.error("fetchエラー:", error);
   }
 });
+
