@@ -125,30 +125,4 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const formData = new FormData(form);
-    const params = new URLSearchParams();
-    for (const [key, value] of formData.entries()) {
-      params.append(key, value);
-    }
-
-    try {
-      const response = await fetch("https://if0_39923913.infinityfreeapp.com/complete.php", {
-  method: "POST",
-  body: formData // ← headersなしで送る
-});
-
-
-      const result = await response.text();
-      alert("登録が完了しました！");
-      console.log("サーバー応答:", result);
-    } catch (error) {
-      alert("通信エラーが発生しました");
-      console.error("fetchエラー:", error);
-    }
-  });
-});
-
-
-
-
-
+    
