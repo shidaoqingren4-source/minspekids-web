@@ -91,8 +91,8 @@ document.addEventListener("DOMContentLoaded", () => {
   monthSelect.addEventListener("change", updateDays);
   updateDays();
 
-  // 登録処理（バリデーション → fetch送信）
-  document.getElementById("button").addEventListener("click", async (e) => {
+  // 登録処理（バリデーションのみ）
+  document.getElementById("button").addEventListener("click", (e) => {
     e.preventDefault();
     const form = document.querySelector("form");
     const requiredFields = form.querySelectorAll("input[required], select[required]");
@@ -125,4 +125,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    
+    alert("入力内容は問題ありません！（送信処理はまだ行っていません）");
+  });
+});
