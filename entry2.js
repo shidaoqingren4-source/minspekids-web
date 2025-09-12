@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("http://minspekids.wuaze.com/complete.php", {
+      const response = await fetch("https://minspekids.wuaze.com/complete.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
@@ -149,4 +149,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
