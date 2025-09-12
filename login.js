@@ -27,7 +27,7 @@ async function checkLogin() {
   const password = passwordInput.value.trim();
 
   try {
-   const response = await fetch("http://localhost/check_login.php", {
+   const response = await fetch("https://minspekids.wuaze.com/check_login.php", {
   method: "POST",
   headers: {
     "Content-Type": "application/x-www-form-urlencoded"
@@ -76,6 +76,7 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault();
   await checkLogin();
 });
+
 
 
 
