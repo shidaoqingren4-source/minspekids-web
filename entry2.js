@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     try {
-      const response = await fetch("https://minspekids.wuaze.com/complete.php", {
+      const response = await fetch("https://if0_39923913.infinityfreeapp.com/complete.php", {
   method: "POST",
   body: formData // ← headersなしで送る
 });
@@ -147,6 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
 
 
