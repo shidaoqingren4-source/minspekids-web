@@ -22,43 +22,7 @@ function checkInputs() {
   }
 }
 
-// 認証チェック（fetch使用）
-async function checkLogin() {
-  const email = emailInput.value.trim();
-  const password = passwordInput.value.trim();
 
-  try {
-   const response = await fetch("https://minspekids.wuaze.com/check_login.php", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/x-www-form-urlencoded"
-  },
-  body: `email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`
-});
-
-
-    if (!response.ok) {
-      throw new Error("サーバーエラー");
-    }
-
-    const result = await response.json();
-
-    if (result.valid) {
-      window.location.href = "index.html"; // 認証成功 → 遷移先
-    } else {
-      errorDiv.textContent = result.message || "メールアドレスまたはパスワードが違います";
-      errorDiv.style.color = "red";
-      loginButton.classList.remove("active");
-      loginButton.disabled = true;
-    }
-  } catch (error) {
-    console.error("通信エラー:", error);
-    errorDiv.textContent = "通信エラーが発生しました";
-    errorDiv.style.color = "red";
-    loginButton.classList.remove("active");
-    loginButton.disabled = true;
-  }
-}
 
 // パスワード表示切り替え
 togglePassword.addEventListener("click", () => {
@@ -77,6 +41,7 @@ loginButton.addEventListener("click", async (e) => {
   e.preventDefault();
   await checkLogin();
 });
+
 
 
 
