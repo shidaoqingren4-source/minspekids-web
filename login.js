@@ -36,6 +36,15 @@ togglePassword.addEventListener("click", () => {
 emailInput.addEventListener("input", checkInputs);
 passwordInput.addEventListener("input", checkInputs);
 
+const params = new URLSearchParams(window.location.search);
+const errorMessage = params.get("error");
+
+if (errorMessage) {
+  const errorDiv = document.querySelector(".error-message");
+  errorDiv.textContent = decodeURIComponent(errorMessage);
+  errorDiv.style.color = "red";
+}
+
 
 
 
