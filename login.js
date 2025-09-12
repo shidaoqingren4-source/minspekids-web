@@ -43,7 +43,10 @@ if (errorMessage) {
   errorDiv.textContent = errorMessage;
   errorDiv.style.color = "red";
 
-  // 表示後にURLをクリーンアップ
+}
+
+// URLの ?error=... を消す（履歴は残さず、ページも再読み込みしない）
+if (window.location.search.includes("error")) {
   window.history.replaceState({}, document.title, window.location.pathname);
 }
 
