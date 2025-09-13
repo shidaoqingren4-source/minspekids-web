@@ -36,16 +36,7 @@ togglePassword.addEventListener("click", () => {
 emailInput.addEventListener("input", checkInputs);
 passwordInput.addEventListener("input", checkInputs);
 
-const params = new URLSearchParams(window.location.search);
-const errorMessage = params.get("error");
 
-if (errorMessage) {
-  errorDiv.textContent = errorMessage;
-  errorDiv.style.color = "red";
-
-  // 表示したあとにURLをクリーンアップ
-  window.history.replaceState({}, document.title, window.location.pathname);
-}
 
 loginButton.addEventListener("click", () => {
   const email = emailInput.value.trim();
@@ -74,6 +65,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
