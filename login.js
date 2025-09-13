@@ -47,9 +47,33 @@ if (errorMessage) {
   window.history.replaceState({}, document.title, window.location.pathname);
 }
 
-localStorage.setItem("loggedIn", "true");
-localStorage.setItem("userName", "晴人");
+loginButton.addEventListener("click", () => {
+  const email = emailInput.value.trim();
+  const password = passwordInput.value.trim();
 
+  fetch("http://localhost/login.php", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ email, password })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.status === "success") {
+        // ✅ ログイン成功時だけ保存
+        localStorage.setItem("loggedIn", "true");
+        localStorage.setItem("userName", data.name);
+        window.location.href = "index.html";
+      } else {
+        errorDiv.textContent = data.message;
+        errorDiv.style.color = "red";
+      }
+    })
+    .catch(err => {
+      errorDiv.textContent = "通信エラーが発生しました";
+      errorDiv.style.color = "red";
+      console.error(err);
+    });
+});
 
 
 
