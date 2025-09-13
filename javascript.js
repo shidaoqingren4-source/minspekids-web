@@ -308,15 +308,15 @@ window.addEventListener("DOMContentLoaded", () => {
   const loginIcon = document.getElementById("login-icon");
 
   if (localStorage.getItem("loggedIn") === "true") {
-    // 表示を「マイページ」に変更
     loginFigure.querySelector("nav").textContent = "マイページ";
     loginIcon.classList.remove("fa-user");
-    loginIcon.classList.add("fa-id-card"); // 好きなアイコンに変更可能
+    loginIcon.classList.add("fa-id-card");
     loginFigure.addEventListener("click", () => {
-      window.location.href = "mypage.html"; // マイページのURLに合わせて変更
+      window.location.href = "mypage.html";
     });
   }
 });
+
 
 
 
