@@ -1,4 +1,4 @@
-window.addEventListener("DOMContentLoaded", () => {
+
   const loginFigure = document.getElementById("login");
   const loginIcon = document.getElementById("login-icon");
   const navText = loginFigure?.querySelector("figcaption nav");
@@ -20,4 +20,4 @@ window.addEventListener("DOMContentLoaded", () => {
       window.location.href = "mypage.html";
     });
   }
-});
+
