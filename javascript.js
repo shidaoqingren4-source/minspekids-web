@@ -319,7 +319,8 @@ window.addEventListener("DOMContentLoaded", () => {
       navText.textContent = "マイページ";
     }
     if (loginIcon) {
-      loginIcon.className = "fa-solid fa-id-card";
+      loginIcon.classList.remove("fa-user");
+      loginIcon.classList.add("fa-id-card");
     }
 
     loginFigure?.addEventListener("click", (e) => {
@@ -328,6 +329,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
