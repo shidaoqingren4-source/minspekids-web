@@ -1,6 +1,4 @@
 
-console.log("loggedIn:", localStorage.getItem("loggedIn"));
-console.log("userName:", localStorage.getItem("userName"));
 
 const button = document.querySelector('#button');
 const menu = document.querySelector('#menu');
@@ -330,6 +328,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
     });
   }
 });
+
 
 
 
