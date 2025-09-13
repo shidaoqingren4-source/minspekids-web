@@ -311,12 +311,9 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  search(); // 初期表示
-
-  // ログイン状態のチェックもここにまとめると安全
   const loginFigure = document.getElementById("login");
   const loginIcon = document.getElementById("login-icon");
-  const navText = loginFigure.querySelector("figcaption nav");
+  const navText = loginFigure?.querySelector("figcaption nav");
 
   if (localStorage.getItem("loggedIn") === "true") {
     if (navText) navText.textContent = "マイページ";
@@ -325,12 +322,13 @@ window.addEventListener("DOMContentLoaded", () => {
       loginIcon.classList.add("fa-id-card");
     }
 
-    loginFigure.addEventListener("click", (e) => {
+    loginFigure?.addEventListener("click", (e) => {
       e.preventDefault();
       window.location.href = "mypage.html";
     });
   }
 });
+
 
 
 
