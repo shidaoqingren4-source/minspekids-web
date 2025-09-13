@@ -54,7 +54,8 @@ loginButton.addEventListener("click", () => {
         localStorage.setItem("userName", data.name);
         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
-        window.location.href = `https://shidaoqingren4-source.github.io/minspekids-web/login.html?error=${encodeURIComponent(data.message)}`;
+        errorDiv.textContent = deta.message;
+      errorDiv.style.color = "red";
       }
     })
     .catch(err => {
@@ -64,14 +65,7 @@ loginButton.addEventListener("click", () => {
     });
 });
 
-const params = new URLSearchParams(window.location.search);
-const errorMessage = params.get("error");
 
-if (errorMessage) {
-  const errorDiv = document.querySelector(".error-message");
-  errorDiv.textContent = errorMessage;
-  errorDiv.style.color = "red";
-}
 
 
 
