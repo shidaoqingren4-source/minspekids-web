@@ -1,4 +1,4 @@
-
+console.log("navText:", navText); // ← null ならセレクタが間違ってる
 console.log("loggedIn:", localStorage.getItem("loggedIn"));
 console.log("userName:", localStorage.getItem("userName"));
 
@@ -328,6 +328,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
