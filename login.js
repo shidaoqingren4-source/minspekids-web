@@ -47,6 +47,9 @@ if (errorMessage) {
   window.history.replaceState({}, document.title, window.location.pathname);
 }
 
+localStorage.setItem("loggedIn", "true");
+localStorage.setItem("userName", "晴人");
+
 
 
 
