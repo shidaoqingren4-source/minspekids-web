@@ -20,6 +20,7 @@
       window.location.href = "mypage.html";
     });
   }else{
-    window.location.href = "login.html";
+    loginFigure?.addEventListener("click", (e) => {
+      window.location.href = "login.html";
   }
 
