@@ -18,9 +18,7 @@ document.getElementById("entry").addEventListener("click", function() {
     window.location.href = "entry.html";
   });
 
-document.getElementById("login").addEventListener("click", function() {
-    window.location.href = "login.html";
-  });
+
  
 function scrollToPosition(y) {
   window.scrollTo({
@@ -304,6 +302,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 
 });
+
 
 
 
