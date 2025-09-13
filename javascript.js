@@ -306,16 +306,22 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 window.addEventListener("DOMContentLoaded", () => {
   const loginFigure = document.getElementById("login");
   const loginIcon = document.getElementById("login-icon");
+  const navText = loginFigure.querySelector("nav");
 
   if (localStorage.getItem("loggedIn") === "true") {
-    loginFigure.querySelector("nav").textContent = "マイページ";
-    loginIcon.classList.remove("fa-user");
-    loginIcon.classList.add("fa-id-card");
-    loginFigure.addEventListener("click", () => {
+    if (navText) navText.textContent = "マイページ";
+    if (loginIcon) {
+      loginIcon.classList.remove("fa-user");
+      loginIcon.classList.add("fa-id-card");
+    }
+
+    loginFigure.addEventListener("click", (e) => {
+      e.preventDefault();
       window.location.href = "mypage.html";
     });
   }
 });
+
 
 
 
