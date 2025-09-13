@@ -42,7 +42,7 @@ loginButton.addEventListener("click", () => {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  fetch("http://localhost/check_login.php", {
+    fetch("http://localhost/login.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ email, password })
@@ -50,13 +50,11 @@ loginButton.addEventListener("click", () => {
     .then(res => res.json())
     .then(data => {
       if (data.status === "success") {
-        // ✅ ログイン成功時だけ保存
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("userName", data.name);
         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
-         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/login.html"
-        errorDiv.textContent = "メールアドレスまたはパスワードが違います";
+        errorDiv.textContent = data.message;
         errorDiv.style.color = "red";
       }
     })
@@ -66,6 +64,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
