@@ -16,12 +16,9 @@ document.getElementById("search").addEventListener("click", function() {
     window.location.href = "search.html";
   });
 
-const login = document.getElementById("login");
-if (login) {
-  login.addEventListener("click", () => {
+document.getElementById("login").addEventListener("click", function() {
     window.location.href = "login.html";
   });
-}
 
 document.getElementById("entry").addEventListener("click", function() {
     window.location.href = "entry.html";
@@ -326,6 +323,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
       window.location.href = "mypage.html";
     });
   }
+
 
 
 
