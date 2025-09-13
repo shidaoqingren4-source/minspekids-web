@@ -318,11 +318,9 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
       loginIcon.classList.add("fa-id-card");
     }
 
-    loginFigure?.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.location.href = "mypage.html";
-    });
+    
   }
+
 
 
 
