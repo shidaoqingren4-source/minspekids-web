@@ -42,7 +42,7 @@ loginButton.addEventListener("click", () => {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-    fetch("http://localhost/login.php", {
+    fetch("http://localhost/check_login.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ email, password })
@@ -64,6 +64,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
