@@ -55,7 +55,6 @@ loginButton.addEventListener("click", () => {
         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
         window.location.href = `https://shidaoqingren4-source.github.io/minspekids-web/login.html?error=${encodeURIComponent(data.message)}`;
-
       }
     })
     .catch(err => {
@@ -73,6 +72,7 @@ if (errorMessage) {
   errorDiv.textContent = errorMessage;
   errorDiv.style.color = "red";
 }
+
 
 
 
