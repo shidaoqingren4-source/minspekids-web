@@ -274,7 +274,7 @@ document.getElementById("prefSelect").addEventListener("change", function () {
 
   cityContainer.style.display = "block";
 });
-};
+});
 
 function search() {
   const Input = document.getElementById("cityInput")?.value.trim() || "";
@@ -332,6 +332,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
