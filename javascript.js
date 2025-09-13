@@ -307,9 +307,10 @@ window.addEventListener("DOMContentLoaded", () => {
   search(); // ←既存の施設表示処理
 
   // ログイン状態ならログインアイコンをマイページに変更
-  const loginLink = document.getElementById("login");
+  const loginLink = document.getElementById("login-icon");
   if (localStorage.getItem("loggedIn") === "true") {
     loginLink.textContent = "マイページ";
     loginLink.href = "mypage.html"; // ←マイページのURLに合わせて変更
   }
 });
+
