@@ -304,6 +304,9 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  search(); // 初期表示
+
+  // ログイン状態のチェックもここにまとめると安全
   const loginFigure = document.getElementById("login");
   const loginIcon = document.getElementById("login-icon");
   const navText = loginFigure.querySelector("nav");
@@ -321,6 +324,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
