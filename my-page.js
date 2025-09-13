@@ -20,9 +20,5 @@ const loginFigure = document.getElementById("login");
       e.preventDefault();
       window.location.href = "mypage.html";
     });
-  } else {
-    newLoginFigure?.addEventListener("click", () => {
-      window.location.href = "login.html";
-    });
-  }
+  } 
 
