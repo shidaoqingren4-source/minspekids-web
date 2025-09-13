@@ -51,7 +51,7 @@ loginButton.addEventListener("click", () => {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
-  fetch("http://localhost/login.php", {
+  fetch("http://localhost/check_login.php", {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
     body: new URLSearchParams({ email, password })
@@ -62,7 +62,7 @@ loginButton.addEventListener("click", () => {
         // ✅ ログイン成功時だけ保存
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("userName", data.name);
-        window.location.href = "index.html";
+        window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
         errorDiv.textContent = data.message;
         errorDiv.style.color = "red";
@@ -74,6 +74,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
