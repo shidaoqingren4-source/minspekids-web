@@ -19,5 +19,7 @@
       e.preventDefault();
       window.location.href = "mypage.html";
     });
+  }else{
+    window.location.href = "login.html";
   }
 
