@@ -309,7 +309,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // ログイン状態のチェックもここにまとめると安全
   const loginFigure = document.getElementById("login");
   const loginIcon = document.getElementById("login-icon");
-  const navText = loginFigure.querySelector("nav");
+  const navText = loginFigure.querySelector("figcaption nav");
 
   if (localStorage.getItem("loggedIn") === "true") {
     if (navText) navText.textContent = "マイページ";
@@ -324,6 +324,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
 
 
 
