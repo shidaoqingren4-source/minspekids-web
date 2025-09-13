@@ -304,14 +304,19 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  search(); // ←既存の施設表示処理
+  const loginFigure = document.getElementById("login");
+  const loginIcon = document.getElementById("login-icon");
 
-  // ログイン状態ならログインアイコンをマイページに変更
-  const loginLink = document.getElementById("login");
   if (localStorage.getItem("loggedIn") === "true") {
-    loginLink.textContent = "マイページ";
-    loginLink.href = "mypage.html"; // ←マイページのURLに合わせて変更
+    // 表示を「マイページ」に変更
+    loginFigure.querySelector("nav").textContent = "マイページ";
+    loginIcon.classList.remove("fa-user");
+    loginIcon.classList.add("fa-id-card"); // 好きなアイコンに変更可能
+    loginFigure.addEventListener("click", () => {
+      window.location.href = "mypage.html"; // マイページのURLに合わせて変更
+    });
   }
 });
+
 
 
