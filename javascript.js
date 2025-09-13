@@ -14,9 +14,28 @@ document.getElementById("search").addEventListener("click", function() {
     window.location.href = "search.html";
   });
 
-document.getElementById("login").addEventListener("click", function() {
-    window.location.href = "login.html";
-  });
+window.addEventListener("DOMContentLoaded", () => {
+  const loginFigure = document.getElementById("login");
+  const loginIcon = document.getElementById("login-icon");
+  const navText = loginFigure?.querySelector("figcaption nav");
+
+  if (localStorage.getItem("loggedIn") === "true") {
+    if (navText) navText.textContent = "マイページ";
+    if (loginIcon) {
+      loginIcon.classList.remove("fa-user");
+      loginIcon.classList.add("fa-id-card");
+    }
+
+    loginFigure?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.href = "mypage.html";
+    });
+  } else {
+    loginFigure?.addEventListener("click", () => {
+      window.location.href = "login.html";
+    });
+  }
+});
 
 document.getElementById("entry").addEventListener("click", function() {
     window.location.href = "entry.html";
@@ -328,6 +347,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
     });
   }
 });
+
 
 
 
