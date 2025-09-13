@@ -54,7 +54,7 @@ loginButton.addEventListener("click", () => {
         localStorage.setItem("userName", data.name);
         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
-        errorDiv.textContent = deta.message;
+        errorDiv.textContent = data.message;
         errorDiv.style.color = "red";
       }
     })
@@ -64,6 +64,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
