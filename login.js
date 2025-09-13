@@ -55,6 +55,7 @@ loginButton.addEventListener("click", () => {
         localStorage.setItem("userName", data.name);
         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/index.html";
       } else {
+         window.location.href = "https://shidaoqingren4-source.github.io/minspekids-web/login.html"
         errorDiv.textContent = "メールアドレスまたはパスワードが違います";
         errorDiv.style.color = "red";
       }
@@ -65,6 +66,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
