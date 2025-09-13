@@ -25,4 +25,4 @@ const loginFigure = document.getElementById("login");
       window.location.href = "login.html";
     });
   }
-});
+
