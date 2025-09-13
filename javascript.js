@@ -312,7 +312,9 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   const navText = loginFigure?.querySelector("figcaption nav");
 
   if (localStorage.getItem("loggedIn") === "true") {
-    if (navText) navText.textContent = "マイページ";
+    if (navText) {
+        navText.textContent = "マイページ";
+    }              
     if (loginIcon) {
       loginIcon.classList.remove("fa-user");
       loginIcon.classList.add("fa-id-card");
@@ -320,6 +322,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 
     
   }
+
 
 
 
