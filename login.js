@@ -52,6 +52,12 @@ loginButton.addEventListener("click", () => {
       if (data.status === "success") {
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("useName", data.name);
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("password", data.password);
+        localStorage.setItem("birth", data.birth);
+        localStorage.setItem("phone", data.phone);
+        localStorage.setItem("post-number", data.postnumber);
+        localStorage.setItem("address", data.address);
         console.log("保存したよ:", localStorage.getItem("loggedIn"), localStorage.getItem("userName"));
         window.location.href = "index.html";
       } else {
@@ -65,6 +71,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
