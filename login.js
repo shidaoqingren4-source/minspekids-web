@@ -51,7 +51,7 @@ loginButton.addEventListener("click", () => {
     .then(data => {
       if (data.status === "success") {
         localStorage.setItem("loggedIn", "true");
-        localStorage.setItem("useName", data.name);
+        localStorage.setItem("userName", data.name);
         localStorage.setItem("email", data.email);
         localStorage.setItem("password", data.password);
         localStorage.setItem("birth", data.birth);
@@ -71,6 +71,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
