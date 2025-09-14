@@ -188,21 +188,35 @@ header{
   display: block;
 }
 
-#account-info ul{
-    list-style-type: none;
-    font-size: 18px;
-    margin-top: 30px;
-    
+#account-info ul {
+  list-style-type: none;
+  font-size: 18px;
+  margin-top: 30px;
+  margin-left: 0px;
+  padding: 0;
 }
 
-#account-info li{
-   padding-bottom: 25px;
+#account-info li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-bottom: 25px;
 }
 
-#account-info span{
-    margin-left: 50px;
+#account-info li::before {
+  content: attr(data-label);
+  flex: 0 0 150px; /* ラベルの幅を固定 */
+  text-align: left;
+  font-weight: bold;
+  color: #555;
 }
 
+#account-info span {
+  flex: 1;
+  text-align: left;
+  margin-left: 50px;
+  color: #222;
+}
 
 .title{
     width: 250px;
@@ -238,4 +252,5 @@ header{
 
 #button-logout:hover{
     background-color: rgb(175, 30, 30);
+
 }
