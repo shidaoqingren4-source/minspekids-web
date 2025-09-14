@@ -154,19 +154,20 @@ document.getElementById("button").addEventListener("click", function (e) {
 
 });
 
-document.getElementById("button").addEventListener("click", function(e) {
-  e.preventDefault(); // フォームの送信を止める
-
-  // localStorage に保存
-  localStorage.setItem("username", username);
-  localStorage.setItem("email", email);
-  localStorage.setItem("birth", birth);
-  localStorage.setItem("phone", phone);
-  localStorage.setItem("post-number", postNumber);
-  localStorage.setItem("address", address);
-  localStorage.setItem("password", password); // ⚠️ 本番ではハッシュ化推奨
-  localStorage.setItem("loggedIn", "true");
-
-  // 登録完了後の処理（例：マイページへ遷移）
-  window.location.href = "index.html";
+fetch("complete.php", {
+  method: "POST",
+  body: new FormData(document.getElementById("button"))
+})
+.then(res => res.json())
+.then(data => {
+  if (data.status === "success") {
+    localStorage.setItem("username", data.name);
+    localStorage.setItem("email", data.email);
+    localStorage.setItem("birth", data.birth);
+    localStorage.setItem("phone", data.phone);
+    localStorage.setItem("post-number", data.postnumber);
+    localStorage.setItem("address", data.address);
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "index.html";
+  }
 });
