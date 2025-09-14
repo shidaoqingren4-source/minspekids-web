@@ -30,16 +30,11 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("address").textContent = localStorage.getItem("address");
   
 document.getElementById("button-logout").addEventListener("click", function() {
+    localStorage.clear();
     localStorage.setItem("loggedIn", "false");
-    localStorage.removeItem("userName");
-    localStorage.removeItem("email");
-    localStorage.removeItem("birth");
-    localStorage.removeItem("phone");
-    localStorage.removeItem("post-number");
-    localStorage.removeItem("address");
-    window.location.href = "index.html";
   });
 });
+
 
 
 
