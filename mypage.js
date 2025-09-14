@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("name").textContent = localStorage.getItem("userName");
   document.getElementById("user").textContent = localStorage.getItem("userName");
   document.getElementById("email").textContent = localStorage.getItem("email");
   document.getElementById("birth").textContent = localStorage.getItem("birth");
@@ -29,5 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("address").textContent = localStorage.getItem("address");
 
 });
+
 
 
