@@ -156,7 +156,7 @@ document.getElementById("button").addEventListener("click", function (e) {
 
 fetch("complete.php", {
   method: "POST",
-  body: new FormData(document.getElementById("button"))
+  body: new FormData(document.getElementById("form"))
 })
 .then(res => res.json())
 .then(data => {
@@ -171,3 +171,4 @@ fetch("complete.php", {
     window.location.href = "index.html";
   }
 });
+
