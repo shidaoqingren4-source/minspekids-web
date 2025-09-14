@@ -23,7 +23,10 @@ window.addEventListener("DOMContentLoaded", () => {
 window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("user").textContent = localStorage.getItem("userName");
   document.getElementById("email").textContent = localStorage.getItem("email");
-  document.getElementById("password").textContent = localStorage.getItem("password");
-  
+  document.getElementById("birth").textContent = localStorage.getItem("birth");
+  document.getElementById("phone").textContent = localStorage.getItem("phone");
+  document.getElementById("post-number").textContent = localStorage.getItem("post-number");
+  document.getElementById("address").textContent = localStorage.getItem("address");
 
 });
+
