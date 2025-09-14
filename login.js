@@ -53,7 +53,6 @@ loginButton.addEventListener("click", () => {
         localStorage.setItem("loggedIn", "true");
         localStorage.setItem("userName", data.name);
         localStorage.setItem("email", data.email);
-        localStorage.setItem("password", data.password);
         localStorage.setItem("birth", data.birth);
         localStorage.setItem("phone", data.phone);
         localStorage.setItem("post-number", data.postnumber);
@@ -71,6 +70,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
