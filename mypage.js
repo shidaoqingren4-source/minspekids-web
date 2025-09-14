@@ -21,10 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("user").textContent = localStorage.getItem("useName");
+  document.getElementById("user").textContent = localStorage.getItem("userName");
   document.getElementById("email").textContent = localStorage.getItem("email");
   document.getElementById("password").textContent = localStorage.getItem("password");
   
 
 });
+
 
