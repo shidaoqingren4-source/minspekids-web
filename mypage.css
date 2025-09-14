@@ -229,7 +229,7 @@ header{
     padding-bottom: 5px;
 }
 
-.name{
+.mypage{
     font-size: 30px;
     font-weight: bold;
     margin: 0;
@@ -254,3 +254,4 @@ header{
     background-color: rgb(175, 30, 30);
 
 }
+
