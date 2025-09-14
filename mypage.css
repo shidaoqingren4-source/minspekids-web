@@ -188,14 +188,21 @@ header{
   display: block;
 }
 
-#history ul{
+#account-info ul{
     list-style-type: none;
     font-size: 18px;
+    margin-top: 30px;
+    
 }
 
-#history li{
-    padding-bottom: 40px;
+#account-info li{
+   padding-bottom: 25px;
 }
+
+#account-info span{
+    margin-left: 50px;
+}
+
 
 .title{
     width: 250px;
@@ -219,5 +226,16 @@ header{
     width: 100px;
     height: 50px;
     position: absolute;
-    bottom: 0;
+    right: 250px;
+    top: 590px;
+    border: none;
+    background-color: rgb(231, 160, 160);
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+#button-logout:hover{
+    background-color: rgb(175, 30, 30);
 }
