@@ -28,9 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.getElementById("phone").textContent = localStorage.getItem("phone");
   document.getElementById("post-number").textContent = localStorage.getItem("post-number");
   document.getElementById("address").textContent = localStorage.getItem("address");
-
-});
-
+  
 document.getElementById("button-logout").addEventListener("click", function() {
     localStorage.setItem("loggedIn", "false");
     localStorage.removeItem("username");
@@ -41,6 +39,10 @@ document.getElementById("button-logout").addEventListener("click", function() {
     localStorage.removeItem("address");
     window.location.href = "index.html";
   });
+});
+
+
+
 
 
 
