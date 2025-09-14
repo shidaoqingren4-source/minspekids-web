@@ -31,5 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
 });
 
+document.getElementById("button-logout").addEventListener("click", function() {
+    localStorage.setItem("loggedIn", "false");
+    window.location.href = "index.html";
+  });
+
+
 
 
