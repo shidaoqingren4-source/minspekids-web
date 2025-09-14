@@ -31,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
   
 document.getElementById("button-logout").addEventListener("click", function() {
     localStorage.setItem("loggedIn", "false");
-    localStorage.removeItem("username");
+    localStorage.removeItem("userName");
     localStorage.removeItem("email");
     localStorage.removeItem("birth");
     localStorage.removeItem("phone");
@@ -40,6 +40,7 @@ document.getElementById("button-logout").addEventListener("click", function() {
     window.location.href = "index.html";
   });
 });
+
 
 
 
