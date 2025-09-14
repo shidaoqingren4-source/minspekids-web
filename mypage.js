@@ -33,8 +33,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
 document.getElementById("button-logout").addEventListener("click", function() {
     localStorage.setItem("loggedIn", "false");
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
+    localStorage.removeItem("birth");
+    localStorage.removeItem("phone");
+    localStorage.removeItem("post-number");
+    localStorage.removeItem("address");
     window.location.href = "index.html";
   });
+
 
 
 
