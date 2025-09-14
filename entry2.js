@@ -151,4 +151,22 @@ document.getElementById("button").addEventListener("click", function (e) {
 
   // 条件分岐：すべてOK
   form.submit();
+
+});
+
+document.getElementById("button").addEventListener("click", function(e) {
+  e.preventDefault(); // フォームの送信を止める
+
+  // localStorage に保存
+  localStorage.setItem("username", username);
+  localStorage.setItem("email", email);
+  localStorage.setItem("birth", birth);
+  localStorage.setItem("phone", phone);
+  localStorage.setItem("post-number", postNumber);
+  localStorage.setItem("address", address);
+  localStorage.setItem("password", password); // ⚠️ 本番ではハッシュ化推奨
+  localStorage.setItem("loggedIn", "true");
+
+  // 登録完了後の処理（例：マイページへ遷移）
+  window.location.href = "index.html";
 });
