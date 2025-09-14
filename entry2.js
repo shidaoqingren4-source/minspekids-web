@@ -154,7 +154,7 @@ document.getElementById("button").addEventListener("click", function (e) {
 
 });
 
-fetch("complete.php", {
+fetch("http://localhost/complete.php", {
   method: "POST",
   body: new FormData(document.getElementById("form"))
 })
@@ -171,4 +171,5 @@ fetch("complete.php", {
     window.location.href = "index.html";
   }
 });
+
 
