@@ -51,7 +51,7 @@ loginButton.addEventListener("click", () => {
     .then(data => {
       if (data.status === "success") {
         localStorage.setItem("loggedIn", "true");
-        localStorage.setItem("userName", data.name);
+        localStorage.setItem("user", data.name);
         console.log("保存したよ:", localStorage.getItem("loggedIn"), localStorage.getItem("userName"));
         window.location.href = "index.html";
       } else {
@@ -65,6 +65,7 @@ loginButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
 
 
 
