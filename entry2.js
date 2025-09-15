@@ -154,7 +154,7 @@ document.getElementById("button").addEventListener("click", function (e) {
   .then(data => {
     console.log("サーバーからの応答:", data);
     if (data.status === "success") {
-      localStorage.setItem("username", data.name);
+      localStorage.setItem("userName", data.name);
       localStorage.setItem("email", data.email);
       localStorage.setItem("birth", data.birth);
       localStorage.setItem("phone", data.phone);
@@ -168,6 +168,7 @@ document.getElementById("button").addEventListener("click", function (e) {
   })
   
 });
+
 
 
 
