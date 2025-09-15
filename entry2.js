@@ -163,15 +163,11 @@ document.getElementById("button").addEventListener("click", function (e) {
 
       // ✅ ページ遷移はここで！
       window.location.href = "index.html";
-    } else {
-      alert("登録に失敗しました。");
-    }
+    } 
   })
-  .catch(err => {
-    console.error("fetchエラー:", err);
-    alert("通信エラーが発生しました。");
-  });
+  
 });
+
 
 
 
