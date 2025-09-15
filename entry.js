@@ -6,6 +6,10 @@ const emailInput = document.getElementById("email");
     const emailFilled = emailInput.value.trim() !== "";
     const checkboxChecked = checkboxInput.checked;
 
+    if (emailFilled) {
+    localStorage.setItem("email", emailInput.value.trim()); // ← ここで保存！
+  }
+
     if (emailFilled && checkboxChecked) {
       loginButton.classList.add("active");
       loginButton.disabled = false;
@@ -16,4 +20,5 @@ const emailInput = document.getElementById("email");
   }
 
   emailInput.addEventListener("input", checkInputs);
+
   checkboxInput.addEventListener("input", checkInputs);
