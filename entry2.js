@@ -108,13 +108,14 @@ monthSelect.addEventListener("change", updateDays);
 updateDays();
 
 document.getElementById("button").addEventListener("click", function (e) {
-  const form = document.querySelector("form");
+  e.preventDefault(); // ← まず送信を止める
+
+  const form = document.getElementById("form"); // ← IDで取得するように変更
   const requiredFields = form.querySelectorAll("input[required], select[required]");
 
   let isValid = true;
   let missingFields = [];
 
-  // 未入力チェック
   requiredFields.forEach(field => {
     if (!field.value || field.value.trim() === "") {
       isValid = false;
@@ -125,15 +126,12 @@ document.getElementById("button").addEventListener("click", function (e) {
     }
   });
 
-  // パスワード一致チェック
   const password = document.getElementById("password");
   const confirm = document.getElementById("password-onemore");
   const passwordsFilled = password.value.trim() !== "" && confirm.value.trim() !== "";
   const passwordsMatch = password.value === confirm.value;
 
-  // 条件分岐：パスワード不一致のみの場合
   if (missingFields.length === 0 && passwordsFilled && !passwordsMatch) {
-    e.preventDefault();
     password.classList.add("input-password-error");
     confirm.classList.add("input-password-error");
     alert("パスワードが一致していません。");
@@ -141,35 +139,38 @@ document.getElementById("button").addEventListener("click", function (e) {
     return;
   }
 
-  // 条件分岐：未入力項目がある場合（パスワード一致・不一致問わず）
   if (!isValid) {
-    e.preventDefault();
     alert("すべての必須項目を入力してください。");
     missingFields[0].focus();
     return;
   }
 
-  // 条件分岐：すべてOK
-  form.submit();
-  
-fetch("http://localhost/complete.php", {
-  method: "POST",
-  body: new FormData(document.getElementById("form"))
-})
-.then(res => res.json())
-.then(data => {
-  if (data.status === "success") {
-    localStorage.setItem("username", data.name);
-    localStorage.setItem("email", data.email);
-    localStorage.setItem("birth", data.birth);
-    localStorage.setItem("phone", data.phone);
-    localStorage.setItem("post-number", data.postnumber);
-    localStorage.setItem("address", data.address);
-    localStorage.setItem("loggedIn", "true");
-    window.location.href = "index.html";
-  }
-});
-  
+  // ✅ fetchで送信
+  fetch("http://localhost/complete.php", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.status === "success") {
+      localStorage.setItem("username", data.name);
+      localStorage.setItem("email", data.email);
+      localStorage.setItem("birth", data.birth);
+      localStorage.setItem("phone", data.phone);
+      localStorage.setItem("post-number", data.postnumber);
+      localStorage.setItem("address", data.address);
+      localStorage.setItem("loggedIn", "true");
+
+      // ✅ ページ遷移はここで！
+      window.location.href = "index.html";
+    } else {
+      alert("登録に失敗しました。");
+    }
+  })
+  .catch(err => {
+    console.error("fetchエラー:", err);
+    alert("通信エラーが発生しました。");
+  });
 });
 
 
