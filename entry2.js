@@ -151,9 +151,7 @@ document.getElementById("button").addEventListener("click", function (e) {
 
   // 条件分岐：すべてOK
   form.submit();
-
-});
-
+  
 fetch("http://localhost/complete.php", {
   method: "POST",
   body: new FormData(document.getElementById("form"))
@@ -171,5 +169,10 @@ fetch("http://localhost/complete.php", {
     window.location.href = "index.html";
   }
 });
+  
+});
+
+
+
 
 
