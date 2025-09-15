@@ -38,8 +38,7 @@ passwordInput.addEventListener("input", checkInputs);
 
 
 
-loginButton.addEventListener("click", (e) => {
-  e.preventDefault();
+loginButton.addEventListener("click", () => {
   const email = emailInput.value.trim();
   const password = passwordInput.value.trim();
 
@@ -71,6 +70,7 @@ loginButton.addEventListener("click", (e) => {
       console.error(err);
     });
 });
+
 
 
 
