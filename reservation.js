@@ -1,25 +1,3 @@
-const button = document.querySelector('#button');
-const menu = document.querySelector('#menu');
-
-if(button){
-    button.addEventListener('click',() => {
-        button.classList.toggle('active');
-        menu.classList.toggle('active');
-    });
-}
-
-document.getElementById("search").addEventListener("click", function() {
-    window.location.href = "search.html";
-  });
-
-document.getElementById("entry").addEventListener("click", function() {
-    window.location.href = "entry.html";
-  });
-
-document.getElementById("login").addEventListener("click", function() {
-    window.location.href = "login.html";
-  });
-
 
 let facility = null; // グローバル変数として定義
 
@@ -186,3 +164,4 @@ document.getElementById("nextMonth").onclick = () => {
 
 
 renderCalendar(currentDate);
+
