@@ -285,7 +285,8 @@ mask-composite: intersect;
 .introduction1 p{
     max-width: 800px;
     margin: 0 auto;
-    line-height:100px;
+    font-size:20px;
+    line-height:50px;
 }
 
 .introduction2{
@@ -616,6 +617,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
