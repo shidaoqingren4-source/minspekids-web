@@ -202,14 +202,15 @@ input:focus{
 
 .facility-info{
     flex: 1;
-    margin-top: -40px;
     margin-left: 20px;
     font-size: 16px;
 }
 
 .facility-info strong{
     font-size: 18px;
-    line-height: 100px;
+    display: block;
+    margin-bottom: 40px;
+    margin-top: -10px;
 }
 
 .filter-row {
@@ -274,5 +275,6 @@ footer {
   fill:#FFF8E7;
 
 }
+
 
 
