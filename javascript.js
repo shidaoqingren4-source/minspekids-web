@@ -41,7 +41,7 @@ setInterval(() => {
   slides[current].classList.add('active');
 }, 3000); // 3秒ごとに切り替え
 
-const facilities = [
+const facility = [
   {
     name: "神戸市立本多聞小学校（旧校舎）",
     address: "兵庫県神戸市垂水区本多聞4丁目4-1",
@@ -318,6 +318,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 
 });
+
 
 
 
