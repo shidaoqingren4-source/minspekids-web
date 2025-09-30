@@ -244,7 +244,6 @@ function displayResults(filtered) {
         <img src="${facility.image}" alt="${facility.name}" class="facility-img">
         <div class="facility-info">
           <strong>${facility.name}</strong><br>
-          種類：${facility.type}<br>
           住所：${facility.address}<br>
           電話番号：${facility.phone}
         </div>
@@ -319,6 +318,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 
 });
+
 
 
 
