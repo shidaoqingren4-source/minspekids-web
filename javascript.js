@@ -294,10 +294,9 @@ function search() {
   let filtered = facilities.filter(facility => {
     const matchInput = Input === "" || facility.address.includes(Input)
     ||facility.name.includes(Input);
-
     const matchPref = pref === "" || facility.address.includes(pref);
     const matchCity = city === "" || facility.address.includes(city);
-    return matchInput && matchPref && matchCity;
+    return matchInput&& matchPref && matchCity;
   });
 
   displayResults(filtered);
@@ -316,7 +315,6 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   if (event.key === "Enter") {
     search();
   }
-
 });
 
 
