@@ -602,7 +602,7 @@ footer {
     justify-content: center;
 }
 
-.footer a{
+.footer span{
   color: white;
   text-decoration: none;
   cursor: pointer;
@@ -685,6 +685,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
