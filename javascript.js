@@ -41,28 +41,42 @@ setInterval(() => {
   slides[current].classList.add('active');
 }, 3000); // 3秒ごとに切り替え
 
-const facilities = 
-[
-  { name: "神戸市立東灘区民センター（うはらホール）", type: "公民館", address: "兵庫県神戸市東灘区住吉東町5丁目1-16", phone: "078-822-8333", image: "https://www.yakei-kabegami.com/photo/yakei-kabegami/member/m000978/m000978_k00016161_1920-1200.jpg", link: "https://www.kobe-bunka.jp/facilities/higashinada/" },
-  { name: "神戸市立灘区民ホール（マリーホール）", type: "公民館", address: "兵庫県神戸市灘区岸地通1丁目1-1", phone: "078-802-8555", image: "", link: "" },
-  { name: "神戸市立兵庫勤労市民センター", type: "公民館", address: "兵庫県神戸市兵庫区羽坂通4丁目1-1", phone: "078-576-0981", image: "", link: "" },
-  { name: "神戸市立北区民センター（すずらんホール）", type: "公民館", address: "兵庫県神戸市北区鈴蘭台西町1丁目1-2", phone: "078-593-1500", image: "", link: "" },
-  { name: "神戸市立垂水勤労市民センター", type: "公民館", address: "兵庫県神戸市垂水区日向1丁目5-1", phone: "078-708-8901", image: "", link: "" },
-  { name: "神戸市立西区民センター（なでしこホール）", type: "公民館", address: "兵庫県神戸市西区糀台5丁目6-1", phone: "078-991-8321", image: "", link: "" },
-  { name: "姫路市文化センター", type: "公民館", address: "兵庫県姫路市西延末426-1", phone: "079-298-8011", image: "", link: "" },
-  { name: "姫路市市民会館", type: "公民館", address: "兵庫県姫路市総社本町112", phone: "079-284-2800", image: "", link: "" },
-  { name: "姫路市花の北市民広場", type: "公民館", address: "兵庫県姫路市増位新町2丁目12", phone: "079-281-2333", image: "", link: "" },
-  { name: "明石市錦城コミュニティ・センター", type: "公民館", address: "兵庫県明石市上ノ丸3丁目1-11", phone: "078-918-1612", image: "", link: "" },
-  { name: "明石市朝霧北コミュニティ・センター", type: "公民館", address: "兵庫県明石市大蔵谷奥4-1", phone: "078-913-0633", image: "", link: "" },
-  { name: "明石市衣川コミュニティ・センター", type: "公民館", address: "兵庫県明石市田町2丁目1-18", phone: "078-922-4700", image: "", link: "" },
-  { name: "明石市野々池コミュニティ・センター", type: "公民館", address: "兵庫県明石市沢野1丁目3-1", phone: "078-929-0355", image: "", link: "" },
-  { name: "西宮市中央公民館", type: "公民館", address: "兵庫県西宮市川添町15-26", phone: "0798-33-3146", image: "", link: "" },
-  { name: "西宮市鳴尾公民館", type: "公民館", address: "兵庫県西宮市鳴尾町1丁目10-10", phone: "0798-47-1234", image: "", link: "" },
-  { name: "尼崎市立中央公民館", type: "公民館", address: "兵庫県尼崎市昭和通2丁目7-16", phone: "06-6483-6371", image: "", link: "" },
-  { name: "尼崎市立立花公民館", type: "公民館", address: "兵庫県尼崎市立花町2丁目1-1", phone: "06-6429-1234", image: "", link: "" },
-  { name: "加古川市立中央公民館", type: "公民館", address: "兵庫県加古川市加古川町北在家2000", phone: "079-424-1234", image: "", link: "" },
-  { name: "宝塚市立中央公民館", type: "公民館", address: "兵庫県宝塚市末広町3-1", phone: "0797-86-1234", image: "", link: "" },
-  { name: "伊丹市立中央公民館", type: "公民館", address: "兵庫県伊丹市千僧1丁目1-1", phone: "072-784-1234", image: "", link: "" }
+const facilities = [
+  {
+    name: "神戸市立本多聞小学校（旧校舎）",
+    address: "兵庫県神戸市垂水区本多聞4丁目4-1",
+    phone: "078-000-0000",
+    image: "",
+    link: ""
+  },
+  {
+    name: "三木市立みなぎ台小学校（旧校舎）",
+    address: "兵庫県三木市吉川町みなぎ台1丁目31-3",
+    phone: "0794-00-0000",
+    image: "",
+    link: ""
+  },
+  {
+    name: "姫路市立城南小学校（旧校舎）",
+    address: "兵庫県姫路市城南町1丁目",
+    phone: "079-000-0000",
+    image: "",
+    link: ""
+  },
+  {
+    name: "豊岡市立港東小学校（旧校舎）",
+    address: "兵庫県豊岡市気比3291番地の235",
+    phone: "0796-00-0000",
+    image: "",
+    link: ""
+  },
+  {
+    name: "西宮市立船坂小学校（旧校舎）",
+    address: "兵庫県西宮市山口町船坂",
+    phone: "0798-00-0000",
+    image: "",
+    link: ""
+  }
 ];
 
 
@@ -275,7 +289,6 @@ document.getElementById("prefSelect").addEventListener("change", function () {
 
 function search() {
   const Input = document.getElementById("cityInput")?.value.trim() || "";
-  const type = document.getElementById("typeSelect").value;
   const pref = document.getElementById("prefSelect").value;
   const city = document.getElementById("citySelect").value;
 
@@ -283,10 +296,9 @@ function search() {
     const matchInput = Input === "" || facility.address.includes(Input)
     ||facility.name.includes(Input);
 
-    const matchType = type === "" || facility.type === type;
     const matchPref = pref === "" || facility.address.includes(pref);
     const matchCity = city === "" || facility.address.includes(city);
-    return matchInput && matchType && matchPref && matchCity;
+    return matchInput && matchPref && matchCity;
   });
 
   displayResults(filtered);
@@ -307,6 +319,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 
 });
+
 
 
 
