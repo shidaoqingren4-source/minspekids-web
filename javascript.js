@@ -317,6 +317,10 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
   }
 });
 
+document.getElementById("inquiry").addEventListener("click", function() {
+  window.location.href = "index.html"; // 遷移先のURL
+});
+
 
 
 
