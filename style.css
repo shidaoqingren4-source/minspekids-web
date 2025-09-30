@@ -604,8 +604,8 @@ footer {
 
 .footer span{
   color: white;
-  text-decoration: none;
   cursor: pointer;
+  z-index:999;
 }
 
 @media screen and (max-width: 768px) {
@@ -685,6 +685,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
