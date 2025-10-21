@@ -46,14 +46,14 @@ const facilities = [
     name: "神戸市立本多聞小学校（旧校舎）",
     address: "兵庫県神戸市垂水区本多聞4丁目4-1",
     phone: "078-000-0000",
-    image: "",
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E7%25A5%259E%25E6%2588%25B8%25E5%25B8%2582%25E7%25AB%258B%25E6%259C%25AC%25E5%25A4%259A%25E8%2581%259E%25E5%25B0%258F%25E5%25AD%25A6%25E6%25A0%25A1&psig=AOvVaw3-hw47ZD3OnYmI_V-cGscC&ust=1761111979955000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCryMHLtJADFQAAAAAdAAAAABAE",
     link: ""
   },
   {
     name: "三木市立みなぎ台小学校（旧校舎）",
     address: "兵庫県三木市吉川町みなぎ台1丁目31-3",
     phone: "0794-00-0000",
-    image: "",
+    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E4%25B8%2589%25E6%259C%25A8%25E5%25B8%2582%25E7%25AB%258B%25E3%2581%25BF%25E3%2581%25AA%25E3%2581%258E%25E5%258F%25B0%25E5%25B0%258F%25E5%25AD%25A6%25E6%25A0%25A1&psig=AOvVaw2nG6C76XkrRCajTAoiQAYf&ust=1761112011818000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCIihntHLtJADFQAAAAAdAAAAABAE",
     link: ""
   },
   {
@@ -320,6 +320,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
+
 
 
 
