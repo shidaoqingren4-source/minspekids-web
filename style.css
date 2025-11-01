@@ -282,80 +282,8 @@ mask-composite: intersect;
     margin-bottom: 30px;
 }
 
-.introduction1 p{
-  max-width: 900px;
-  margin: auto;
-  overflow: visible;
-}
 
-#first, #second {
-  position: relative;
-  display: block;
-  font-size: 35px;
-  font-weight: 400;
-  margin: 0 auto 50px;
-  width: fit-content;
-  max-width: 90%;
-  overflow: visible;
-}
 
-#first {
-  text-align: left;
-  margin-left: 0;         /* 左端に寄せる */
-  margin-right: auto;
-}
-
-#second {
-  text-align: right;
-  margin-left: auto;      /* 右端に寄せる */
-  margin-right: 0;
-}
-
-.highlight {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px 20px;
-  border-radius: 15px;
-  display: inline-block;
-  position: relative;
-}
-
-/* 吹き出しの三角（左側） */
-#first .highlight::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 80px; /* ← 尖った頂点の位置調整 */
-  width: 40px;
-  height: 25px;
-  background: rgba(255, 255, 255, 0.5);
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-
-}
-
-/* 吹き出しの三角（右側） */
-#second .highlight::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  right: 80px;
-  width: 40px;
-  height: 25px;
-  background: rgba(255, 255, 255, 0.5);
-  clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
-
-}
-
-#third{
-  text-align: center;
-  font-size: 23px;
-  display: block;
-}
-
-#fourth{
-  text-align: center;
-  font-size: 23px;
-  display: block;
-}
 
 .introduction2{
     position: relative;
@@ -685,6 +613,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
