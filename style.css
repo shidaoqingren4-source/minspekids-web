@@ -282,7 +282,56 @@ mask-composite: intersect;
     margin-bottom: 30px;
 }
 
+#first{
+  background-color: rgb(255,255,255,0.7);
+  width: 1000px;
+  padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 50px;
+}
 
+#first img{
+  height: 300px;
+  width: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+#second{
+  background-color: rgb(255,255,255,0.7);
+  width: 1000px;
+  padding: 30px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#second img{
+  height: 300px;
+  width: 300px;
+  display: block;
+  object-fit: cover;
+}
+
+.text-block{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  padding: 0;
+}
+
+.text-block h3{
+  font-size: 25px;
+}
+
+.text-block p{
+  line-height: 30px;
+}
 
 
 .introduction2{
@@ -613,6 +662,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
