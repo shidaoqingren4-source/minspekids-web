@@ -239,7 +239,7 @@ mask-composite: intersect;
 .introduction1{
     position: relative;
     padding-top: 120px;
-    height:750px;
+    height:1000px;
     width:100%;
     background-color:#A8D5BA ;
     margin: 0;
@@ -662,6 +662,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
