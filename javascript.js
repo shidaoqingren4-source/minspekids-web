@@ -46,8 +46,8 @@ const facilities = [
     name: "神戸市立本多聞小学校（旧校舎）",
     address: "兵庫県神戸市垂水区本多聞4丁目4-1",
     phone: "078-000-0000",
-    image: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fja.wikipedia.org%2Fwiki%2F%25E7%25A5%259E%25E6%2588%25B8%25E5%25B8%2582%25E7%25AB%258B%25E6%259C%25AC%25E5%25A4%259A%25E8%2581%259E%25E5%25B0%258F%25E5%25AD%25A6%25E6%25A0%25A1&psig=AOvVaw3-hw47ZD3OnYmI_V-cGscC&ust=1761111979955000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCKCryMHLtJADFQAAAAAdAAAAABAE",
-    link: ""
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbXfjqRsyGYR7aZxfN96MomVaT8Y0o_jtnZA&s",
+    link: "http://www2.kobe-c.ed.jp/htm-es/"
   },
   {
     name: "三木市立みなぎ台小学校（旧校舎）",
@@ -60,21 +60,21 @@ const facilities = [
     name: "姫路市立城南小学校（旧校舎）",
     address: "兵庫県姫路市城南町1丁目",
     phone: "079-000-0000",
-    image: "",
-    link: ""
+    image: "http://www.harima.or.jp/school/himeji/jyonan/castle.jpg",
+    link: "http://www.harima.or.jp/school/himeji/jyonan/index.htm"
   },
   {
     name: "豊岡市立港東小学校（旧校舎）",
     address: "兵庫県豊岡市気比3291番地の235",
     phone: "0796-00-0000",
-    image: "",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwicLxb-W6eU53xrDlmIawcd4kFSdivxEKWA&s",
     link: ""
   },
   {
     name: "西宮市立船坂小学校（旧校舎）",
     address: "兵庫県西宮市山口町船坂",
     phone: "0798-00-0000",
-    image: "",
+    image: "https://nishinomiya-yamaguchi.jp/wp-content/uploads/2011/01/IMG_50151.jpg",
     link: ""
   }
 ];
@@ -320,6 +320,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
+
 
 
 
