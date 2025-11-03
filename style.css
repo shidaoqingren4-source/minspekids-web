@@ -298,6 +298,7 @@ mask-composite: intersect;
   width: 300px;
   display: block;
   object-fit: cover;
+　object-position:right center;
 }
 
 #second{
@@ -662,6 +663,7 @@ footer {
     height: 45px;
   }
 }
+
 
 
 
