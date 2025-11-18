@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // fetch送信
-    fetch("complete.php", {
+    fetch("http://localhost/complete.php", {
       method: "POST",
       body: new FormData(form)
     })
@@ -152,3 +152,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
