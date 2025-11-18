@@ -1,45 +1,37 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>本登録｜みんスぺきっず</title>
-  <link rel="stylesheet" href="entry2.css">
-  <script src="entry2.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="entry2.css">
+    <script src="https://kit.fontawesome.com/00d55dda39.js" crossorigin="anonymous"></script>
+    <script src="entry2.js" defer></script>
 </head>
 <body>
-  <div class="next-form-container">
-    <h1>新規会員登録（本登録）</h1>
-    <p>以下の情報を入力して、登録を完了してください。</p>
-
-    <form id="form" action="complete.php" method="POST" autocomplete="off">
-      <!-- メールアドレス（hidden） -->
-      <input type="hidden" name="email" id="email-hidden">
-
-      <!-- 氏名 -->
-      <label>お名前<span>※必須</span></label>
-      <div class="name">
-        <input type="text" name="firstname" placeholder="姓" required>
-        <input type="text" name="lastname" placeholder="名" required>
-      </div>
-
-      <!-- カナ -->
-      <label>お名前（カナ）<span>※必須</span></label>
-      <div class="name-kana">
-        <input type="text" name="first-name-kana" placeholder="セイ" required>
-        <input type="text" name="last-name-kana" placeholder="メイ" required>
-      </div>
-
-      <!-- 郵便番号 -->
-      <label>郵便番号<span>※必須</span></label>
-      <input type="text" id="post-number" name="post-number" maxlength="8" required>
-
-      <!-- 住所 -->
-      <label>住所<span>※必須</span></label>
-      <div class="address">
-        <select id="pref" name="pref" required>
-          <option value="">都道府県</option>
-          <option value="北海道">北海道</option>
+    <div class="next-form-container">
+        <h1>新規会員登録</h1>
+        <p>アカウント登録の続きを行います</p>
+        <form action="http://localhost/complete.php" method="POST">
+                <label for="name">お名前<span>必須</span></label>
+                <div class="name">
+                <input type="text" name="firstname" required>
+                <input type="text" name="lastname" required>
+            </div>
+                <label for="name-kana">お名前(カナ)<span>必須</span></label>
+                <div class="name-kana"> 
+                <input type="text" name="" required>
+                <input type="text" name="" required>
+            </div>
+                <label for="post-number">郵便番号<span>必須</span></label>
+                <div class="post-number">
+                <input type="text" id="post-number" maxlength="8" required>
+            </div>
+                <label for="address">住所<span>必須</span></label>
+                <div class="address">
+                    <select id="pref" name="pref" required>
+                    <option value="">都道府県</option>
+                    <option value="北海道">北海道</option>
                     <option value="青森県">青森県</option>
                     <option value="岩手県">岩手県</option>
                     <option value="宮城県">宮城県</option>
@@ -86,37 +78,33 @@
                     <option value="宮崎県">宮崎県</option>
                     <option value="鹿児島県">鹿児島県</option>
                     <option value="沖縄県">沖縄県</option>
-          <!-- 都道府県リスト（省略） -->
-        </select>
-        <input type="text" id="city" name="city" placeholder="市区町村" required>
-        <input type="text" id="town" name="town" placeholder="町名・番地" required>
-        <input type="text" id="buildings" name="buildings" placeholder="建物名・部屋番号" required>
-      </div>
-
-      <!-- 電話番号 -->
-      <label>電話番号<span>※必須</span></label>
-      <input type="tel" id="phone" name="phone" required>
-
-      <!-- パスワード -->
-      <label>パスワード<span>※必須</span></label>
-      <div class="password">
-        <input type="password" id="password" name="password" required>
-        <i id="togglePassword1" class="fa-solid fa-eye-slash eye"></i>
-      </div>
-
-      <!-- パスワード確認 -->
-      <label>パスワード（確認用）<span>※必須</span></label>
-      <div class="password-onemore">
-        <input type="password" id="password-onemore" name="password-onemore" required>
-        <i id="togglePassword2" class="fa-solid fa-eye-slash eye"></i>
-      </div>
-
-      <!-- 生年月日 -->
-      <label>生年月日<span>※必須</span></label>
-      <div class="birth">
-        <select name="year" id="year" required><option value="">年</option></select>
-        <select name="month" id="month" required><option value="">月</option></select>
-        <option value="1">1月</option>
+                    </select>
+                <input type="text" id="city" required>
+                <input type="text" id="town" required>
+                <input type="text" id="buildings" required>
+            </div>
+            <label for="phone">電話番号<span>必須</span></label>
+            <div class="phone">
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <label for="password">パスワード<span>必須</span></label>
+            <div class="password">
+                <input type="password" id="password" required>
+                <i id="togglePassword1" class="fa-solid fa-eye-slash eye"></i>
+            </div>
+            <label for="password">パスワード(確認用)<span>必須</span></label>
+            <div class="password-onemore">
+                <input type="password" id="password-onemore" required>
+                <i id="togglePassword2" class="fa-solid fa-eye-slash eye"></i>
+            </div>
+            <label for="birth">生年月日<span>必須</span></label>
+            <div class="birth">
+                <select name="year" id="year" required>
+                    <option value="">年</option>
+                </select>
+                <select name="month" id="month" required>
+                    <option value="">月</option>
+                    <option value="1">1月</option>
                     <option value="2">2月</option>
                     <option value="3">3月</option>
                     <option value="4">4月</option>
@@ -128,13 +116,13 @@
                     <option value="10">10月</option>
                     <option value="11">11月</option>
                     <option value="12">12月</option>
-        <select name="day" id="day" required><option value="">日</option></select>
-      </div>
-
-      <!-- 登録ボタン -->
-      <button type="submit" id="button">登録する</button>
-    </form>
-  </div>
+                </select>
+                <select name="day" id="day" required>
+                    <option value="">日</option>
+                </select>
+            </div>
+            <button id="button">登録する</button>
+        </form>
+    </div>
 </body>
 </html>
-
