@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const monthSelect = document.getElementById("month");
   const daySelect = document.getElementById("day");
 
-  for (let y = 2025; y >= 1915; y--) {
+  for (let y = new Date().getFullYear(); y >= 1915; y--) {
     const option = document.createElement("option");
     option.value = y;
     option.textContent = `${y}年`;
@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   yearSelect.addEventListener("change", updateDays);
   monthSelect.addEventListener("change", updateDays);
-  updateDays();
 
   // フォーム送信処理
   const form = document.getElementById("form");
