@@ -1,25 +1,15 @@
-const emailInput = document.getElementById("email");
-  const checkboxInput = document.getElementById("checkbox");
-  const loginButton = document.getElementById("button");
+document.addEventListener("DOMContentLoaded", () => {
+  const emailInput = document.getElementById("email");
+  const termsCheckbox = document.getElementById("terms");
+  const submitButton = document.getElementById("submit-button");
 
-  function checkInputs() {
+  function validateForm() {
     const emailFilled = emailInput.value.trim() !== "";
-    const checkboxChecked = checkboxInput.checked;
-
-    if (emailFilled && checkboxChecked) {
-      loginButton.classList.add("active");
-      loginButton.disabled = false;
-    } else {
-      loginButton.classList.remove("active");
-      loginButton.disabled = true;
-    }
+    const termsChecked = termsCheckbox.checked;
+    submitButton.disabled = !(emailFilled && termsChecked);
   }
 
-  emailInput.addEventListener("input", checkInputs);
-
-  checkboxInput.addEventListener("input", checkInputs);
-
-loginButton.addEventListener("click", () => {
-  const email = emailInput.value.trim();
-  localStorage.setItem("email", email);
+  emailInput.addEventListener("input", validateForm);
+  termsCheckbox.addEventListener("change", validateForm);
+  validateForm(); // 初期状態でボタンを無効化
 });
