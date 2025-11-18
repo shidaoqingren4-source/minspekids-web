@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // メールアドレスをlocalStorageから取得してhiddenにセット
   const email = localStorage.getItem("email");
-  if (email) {
-    document.getElementById("email-hidden").value = email;
+  const emailHidden = document.getElementById("email-hidden");
+  if (email && emailHidden) {
+    emailHidden.value = email;
   }
 
   // 郵便番号 → 住所自動入力
@@ -27,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
             clearAddressFields();
           }
         })
-        .catch(clearAddressFields);
+        .catch(() => clearAddressFields());
     } else {
       clearAddressFields();
     }
@@ -87,6 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   yearSelect.addEventListener("change", updateDays);
   monthSelect.addEventListener("change", updateDays);
+  updateDays(); // 初期表示
 
   // フォーム送信処理
   const form = document.getElementById("form");
@@ -95,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   submitButton.addEventListener("click", (e) => {
     e.preventDefault();
 
-    const requiredFields = form.querySelectorAll("input[required], select[required]");
+    const requiredFields = form.querySelectorAll("input[required]:not([type='hidden']), select[required]");
     let isValid = true;
     let missingFields = [];
 
