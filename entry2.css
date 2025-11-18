@@ -30,20 +30,20 @@ h1 {
   font-size: 30px;
 }
 
-p{
+p {
   margin: 0;
   margin-bottom: 35px;
   font-size: 17px;
   text-align: center;
 }
 
-label{
-    display: block;
-    margin-bottom: 5px;
-    font-size: 15px;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 15px;
 }
 
-input{
+input {
   width: 100%;
   padding: 10px;
   margin-bottom: 15px;
@@ -52,82 +52,81 @@ input{
   box-sizing: border-box;
 }
 
-.input-error {
-  border: 2px solid red;
-  background-color: #fff0f0;
-}
-
+.input-error,
 .input-password-error {
   border: 2px solid red;
   background-color: #fff0f0;
 }
 
-select{
- width: 50%;
+select {
   padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
-.name{
-    display: flex;
-    gap: 10px;
+.name,
+.name-kana,
+.birth,
+.address {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.name-kana{
-    display: flex;
-    gap: 10px;
+#post-number {
+  width: 50%;
+  margin-right: auto;
 }
 
-#post-number{
-    width: 50%;
-    margin-right: auto;
+#pref {
+  width: 100%;
 }
 
-.password {
+#city,
+#town,
+#buildings {
+  width: 100%;
+}
+
+.password,
+.password-onemore {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-.password-onemore{
-    position: relative;
-  display: flex;
-  align-items: center;
+.password input,
+.password-onemore input {
+  width: 100%;
 }
 
 .eye {
   position: absolute;
   right: 10px;
-  top:10px;
+  top: 12px;
   cursor: pointer;
   font-size: 18px;
   user-select: none;
 }
 
-.birth{
-    display: flex;
-    gap: 10px;
+#year {
+  width: 40%;
 }
 
-#year{
-    width: 40%;
+#month {
+  width: 30%;
 }
 
-#month{
-    width: 30%;
+#day {
+  width: 30%;
 }
 
-#day{
-    width: 30%;
-}
-
-span{
-    color: red;
-    margin-left: 8px;
-    font-size: 13px;
+span {
+  color: red;
+  margin-left: 8px;
+  font-size: 13px;
 }
 
 #button {
