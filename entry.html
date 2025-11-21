@@ -13,21 +13,22 @@
     <p>メールアドレスを入力し、利用規約に同意のうえ「次に進む」を押してください。</p>
 
     <form action="http://localhost/entry.php" method="POST" autocomplete="off">
-      <label for="email">メールアドレス<span class="required">※必須</span></label>
+      <label for="email" class="email">メールアドレス<span class="required">※必須</span></label>
       <input type="email" id="email" name="email" required>
 
       <label class="checkbox">
-        <input type="checkbox" id="terms" name="terms" required>
+        <input type="checkbox" id="checkbox" name="terms" required>
         <a href="terms.html" target="_blank">利用規約</a>に同意する
       </label>
 
-      <button type="submit" id="submit-button">次に進む</button>
+      <button type="submit" id="button">次に進む</button>
     </form>
 
-    <p class="login-link">
+    <p class="already">
       すでにアカウントをお持ちの方は <a href="login.html">こちらからログイン</a>
     </p>
   </div>
 </body>
 </html>
+
 
