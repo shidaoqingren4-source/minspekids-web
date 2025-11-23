@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/00d55dda39.js" crossorigin="anonymous"></script>
+    <script src="reset.js" defer></script>
+    <title>パスワード再設定</title>
+</head>
+<body>
+    <div class="reset-container">
+        <h1>パスワード再設定</h1>
+        <p>パスワードを新しく設定してください</p>
+        <form action="http://localhost/reset.php" method="POST">
+            <label for="password">再設定用のパスワード</label>
+            <div class="password-wrapper">
+            <input type="password" id="password" name="password" required placeholder="パスワードを入力">
+            <i id="togglePassword" class="fa-solid fa-eye eye"></i>
+            </div>
+
+            <label for="password-onemore">再設定用のパスワード(確認用)</label>
+            <div class="password-wrapper-onemore">
+            <input type="password" id="password-onemore" name="password-onemore" required placeholder="パスワードを入力">
+            <i id="togglePassword2" class="fa-solid fa-eye eye"></i>
+            </div>
+            <button id="button" type="submit" disabled>設定</button>
+        </form>
+    </div>
+</body>
+</html>
