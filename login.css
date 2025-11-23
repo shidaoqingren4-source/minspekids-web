@@ -46,7 +46,7 @@ h1 {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #000000;
+  color: #555;
   font-size: 15px;
 }
 
@@ -113,6 +113,7 @@ label {
   top: 600px;
   left: 490px;
 }
+
 
 
 
