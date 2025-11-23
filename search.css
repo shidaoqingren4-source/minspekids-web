@@ -167,10 +167,6 @@ input:focus{
 }
 
 
-.search-box button:hover {
-  background-color: #005a9e;
-}
-
 .results {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2列にする */
@@ -275,6 +271,7 @@ footer {
   fill:#FFF8E7;
 
 }
+
 
 
 
