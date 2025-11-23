@@ -83,6 +83,10 @@ label {
   user-select: none;
 }
 
+.forget{
+  font-size:12px;
+}
+
 .yet{
   font-size: 12px;
 }
@@ -109,6 +113,7 @@ label {
   top: 600px;
   left: 490px;
 }
+
 
 
 
