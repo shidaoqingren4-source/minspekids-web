@@ -1,16 +1,10 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ✅ メールアドレスをURLパラメータから取得してhiddenにセット
-  const emailHidden = document.getElementById("email-hidden");
-  const params = new URLSearchParams(window.location.search);
-  const email = params.get("email");
 
+document.addEventListener("DOMContentLoaded", () => {
+  // メールアドレスをlocalStorageから取得してhiddenにセット
+  const email = localStorage.getItem("email");
+  const emailHidden = document.getElementById("email-hidden");
   if (email && emailHidden) {
     emailHidden.value = email;
-    localStorage.setItem("email", email); // 必要なら保存
-  } else {
-    alert("メールアドレスが見つかりません。最初からやり直してください。");
-    window.location.href = "entry1.html";
-    return;
   }
 
   // 郵便番号 → 住所自動入力
@@ -95,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   yearSelect.addEventListener("change", updateDays);
   monthSelect.addEventListener("change", updateDays);
-  updateDays();
+  updateDays(); // 初期表示
 
   // フォーム送信処理
   const form = document.getElementById("form");
@@ -159,3 +153,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
