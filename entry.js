@@ -20,3 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   termsCheckbox.addEventListener("change", validateForm);
   validateForm(); // 初期状態でボタンを無効化
 });
+
+// 仮登録フォーム送信時に
+localStorage.setItem("email", document.getElementById("email").value);
