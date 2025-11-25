@@ -165,3 +165,16 @@ document.getElementById("nextMonth").onclick = () => {
 
 renderCalendar(currentDate);
 
+document.addEventListener("DOMContentLoaded", () => {
+  const reservationForm = document.getElementById("reservationForm");
+
+  reservationForm.addEventListener("submit", (e) => {
+    const isLoggedIn = localStorage.getItem("loggedIn");
+
+    if (isLoggedIn !== "true") {
+      e.preventDefault();
+      alert("予約にはログインが必要です。ログイン画面に移動します。");
+      window.location.href = "login.html"; // ログイン画面のURLに合わせて変更
+    }
+  });
+});
