@@ -295,17 +295,6 @@ h1{
   padding: 30px 20px;
 }
 
-footer {
-    height: 300px;
-    background-color:#3E665A;
-    margin: 0;
-  }
-
-.footer{
-    color: white;
-    padding-top: 100px;
-}
-
 .wave-container {
   position:absolute;
   z-index: 990;
@@ -326,3 +315,22 @@ footer {
 
 }
 
+footer {
+    height: 300px;
+    background-color:#3E665A;
+    margin: 0;
+  }
+
+.footer{
+    padding-top: 150px;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer span{
+  color: white;
+  cursor: pointer;
+  z-index:999;
+}
