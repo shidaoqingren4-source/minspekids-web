@@ -1,15 +1,14 @@
-
-let facility = null; // グローバル変数として定義
+let facility = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-  // 🔍 施設情報の取得
+  // 施設情報の取得
   facility = JSON.parse(localStorage.getItem("selectedFacility"));
   if (!facility) {
     document.body.innerHTML = "<p>施設情報が見つかりませんでした。</p>";
     return;
   }
 
-  // 🔒 日付制限：今日以前を選べないようにする
+  // 今日以前を選べないようにする
   const today = new Date();
   const yyyy = today.getFullYear();
   const mm = String(today.getMonth() + 1).padStart(2, '0');
@@ -17,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const formattedDate = `${yyyy}-${mm}-${dd}`;
   document.getElementById("date").setAttribute("min", formattedDate);
 
-  // 🏢 施設情報を画面に表示
+  // 施設情報を表示
   document.getElementById("facilityName").textContent = facility.name;
   document.getElementById("facilityType").textContent = facility.type;
   document.getElementById("facilityAddress").textContent = facility.address;
@@ -27,9 +26,16 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("facilityImage").alt = facility.name;
 });
 
-// 📅 予約処理
+// 予約フォーム送信処理
 document.getElementById("reservationForm").addEventListener("submit", function (e) {
   e.preventDefault();
+
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  if (isLoggedIn !== "true") {
+    alert("予約にはログインが必要です。ログイン画面に移動します。");
+    window.location.href = "login.html";
+    return;
+  }
 
   const date = document.getElementById("date").value;
   const time = document.getElementById("time").value;
@@ -39,7 +45,7 @@ document.getElementById("reservationForm").addEventListener("submit", function (
     return;
   }
 
-  // ✅ 予約確認の表示
+  // 予約確認の表示
   const confirmation = document.getElementById("confirmation");
   confirmation.style.display = "block";
   confirmation.innerHTML = `
@@ -52,18 +58,18 @@ document.getElementById("reservationForm").addEventListener("submit", function (
   `;
 });
 
+// 日付入力の整形
 document.getElementById("date").addEventListener("input", function () {
-  const raw = this.value.replace(/\D/g, ""); // 数字以外を除去
-
+  const raw = this.value.replace(/\D/g, "");
   if (raw.length === 8) {
     const year = raw.slice(0, 4);
     const month = raw.slice(4, 6);
     const day = raw.slice(6, 8);
-
     this.value = `${year}/${month}/${day}`;
   }
 });
 
+// カレンダー描画
 const monthYear = document.getElementById("monthYear");
 const calendarBody = document.querySelector("#calendar-body tbody");
 const dateInput = document.getElementById("date");
@@ -98,24 +104,22 @@ function renderCalendar(date) {
     const cellDate = new Date(year, month, day);
     cellDate.setHours(0, 0, 0, 0);
 
-    // 曜日を判定（0:日曜, 6:土曜）
     const dayOfWeek = (firstDay + day - 1) % 7;
     if (dayOfWeek === 0) {
-      cell.style.color = "#d32f2f"; 
-      cell.style.backgroundColor = "#fff7f7ff"// 日曜：赤
+      cell.style.color = "#d32f2f";
+      cell.style.backgroundColor = "#fff7f7ff";
     } else if (dayOfWeek === 6) {
-      cell.style.color = "#1976d2"; 
-      cell.style.backgroundColor = "rgb(241, 248, 255)"// 土曜：青
+      cell.style.color = "#1976d2";
+      cell.style.backgroundColor = "rgb(241, 248, 255)";
     } else {
-      cell.style.color = "#333"; 
-      cell.style.backgroundColor = "#f6f6f6ff"// 平日：黒
+      cell.style.color = "#333";
+      cell.style.backgroundColor = "#f6f6f6ff";
     }
 
-    // 過去の日付は無効化
     if (cellDate < today) {
       cell.classList.add("disabled");
       cell.style.backgroundColor = "#fafafaff";
-      cell.style.color = "#c0c0c0ff"
+      cell.style.color = "#c0c0c0ff";
       cell.style.pointerEvents = "none";
       cell.style.cursor = "default";
     } else {
@@ -127,7 +131,6 @@ function renderCalendar(date) {
       });
     }
 
-    // 今日の日付をハイライト
     if (
       day === today.getDate() &&
       month === today.getMonth() &&
@@ -142,7 +145,6 @@ function renderCalendar(date) {
   calendarBody.appendChild(row);
 }
 
-// 月切り替え（今日より前の月は無効）
 document.getElementById("prevMonth").onclick = () => {
   const tempDate = new Date(currentDate);
   tempDate.setMonth(tempDate.getMonth() - 1);
@@ -162,19 +164,4 @@ document.getElementById("nextMonth").onclick = () => {
   renderCalendar(currentDate);
 };
 
-
 renderCalendar(currentDate);
-
-document.addEventListener("DOMContentLoaded", () => {
-  const reservationForm = document.getElementById("reservationForm");
-
-  reservationForm.addEventListener("submit", (e) => {
-    const isLoggedIn = localStorage.getItem("loggedIn");
-
-    if (isLoggedIn !== "true") {
-      e.preventDefault();
-      window.location.href = "login.html"; // ログイン画面のURLに合わせて変更
-    }
-  });
-});
-
