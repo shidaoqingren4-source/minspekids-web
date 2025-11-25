@@ -173,8 +173,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (isLoggedIn !== "true") {
       e.preventDefault();
-      alert("予約にはログインが必要です。ログイン画面に移動します。");
       window.location.href = "login.html"; // ログイン画面のURLに合わせて変更
     }
   });
 });
+
