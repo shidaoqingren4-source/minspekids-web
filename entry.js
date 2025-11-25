@@ -6,7 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function validateForm() {
     const emailFilled = emailInput.value.trim() !== "";
     const termsChecked = termsCheckbox.checked;
-    submitButton.disabled = !(emailFilled && termsChecked);
+
+    if (emailFilled && termsChecked) {
+      submitButton.disabled = false;
+      submitButton.classList.add("active");
+    } else {
+      submitButton.disabled = true;
+      submitButton.classList.remove("active");
+    }
   }
 
   emailInput.addEventListener("input", validateForm);
