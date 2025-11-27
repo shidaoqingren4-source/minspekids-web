@@ -2,8 +2,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   // メールアドレスをlocalStorageから取得してhiddenにセット
   const email = localStorage.getItem("email");
-  if (email) {
-    document.getElementById("email-hidden").value = email;
+  const emailHidden = document.getElementById("email-hidden");
+  if (email && emailHidden) {
+    emailHidden.value = email;
   }
 
 
@@ -154,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
 
 
 
