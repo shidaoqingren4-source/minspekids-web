@@ -1,154 +1,144 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // メールアドレスをlocalStorageから取得してhiddenにセット
-  const email = localStorage.getItem("email");
-  const emailHidden = document.getElementById("email-hidden");
-  if (email && emailHidden) {
-    emailHidden.value = email;
-  }
 
-  // 郵便番号 → 住所自動入力
-  const postInput = document.getElementById("post-number");
-  postInput.addEventListener("input", () => {
-    let zip = postInput.value.replace(/[^0-9]/g, "");
-    if (zip.length > 3) {
-      zip = zip.slice(0, 3) + "-" + zip.slice(3, 7);
-    }
-    postInput.value = zip;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新規登録</title>
+    <link rel="stylesheet" href="entry2.css">
+    <script src="https://kit.fontawesome.com/00d55dda39.js" crossorigin="anonymous"></script>
+    <script src="entry2.js" defer></script>
+</head>
+<body>
+    <div class="next-form-container">
+        <h1>新規会員登録</h1>
+        <p>アカウント登録の続きを行います</p>
+        <form id="form" action="http://localhost/complete.php" method="POST">
+  <!-- メールアドレス（hidden） -->
+  <input type="hidden" id="email-hidden" name="email">
 
-    if (zip.replace("-", "").length === 7) {
-      fetch(`https://zipcloud.ibsnet.co.jp/api/search?zipcode=${zip.replace("-", "")}`)
-        .then(res => res.json())
-        .then(data => {
-          if (data.results) {
-            const result = data.results[0];
-            document.getElementById("pref").value = result.address1;
-            document.getElementById("city").value = result.address2;
-            document.getElementById("town").value = result.address3;
-          } else {
-            clearAddressFields();
-          }
-        })
-        .catch(() => clearAddressFields());
-    } else {
-      clearAddressFields();
-    }
-  });
+  <label for="name">お名前<span>必須</span></label>
+  <div class="name">
+    <input type="text" name="firstname" required>
+    <input type="text" name="lastname" required>
+  </div>
 
-  function clearAddressFields() {
-    document.getElementById("pref").value = "";
-    document.getElementById("city").value = "";
-    document.getElementById("town").value = "";
-  }
+  <label for="name-kana">お名前(カナ)<span>必須</span></label>
+  <div class="name-kana">
+    <input type="text" name="first-name-kana" required>
+    <input type="text" name="last-name-kana" required>
+  </div>
 
-  // パスワード表示切り替え
-  const togglePassword = document.getElementById("togglePassword1");
-  const passwordInput = document.getElementById("password");
-  togglePassword.addEventListener("click", () => {
-    const isHidden = passwordInput.type === "password";
-    passwordInput.type = isHidden ? "text" : "password";
-    togglePassword.classList.toggle("fa-eye");
-    togglePassword.classList.toggle("fa-eye-slash");
-  });
+  <label for="post-number">郵便番号<span>必須</span></label>
+  <div class="post-number">
+    <input type="text" id="post-number" name="post-number" maxlength="8" required>
+  </div>
 
-  const togglePassword2 = document.getElementById("togglePassword2");
-  const passwordInput2 = document.getElementById("password-onemore");
-  togglePassword2.addEventListener("click", () => {
-    const isHidden = passwordInput2.type === "password";
-    passwordInput2.type = isHidden ? "text" : "password";
-    togglePassword2.classList.toggle("fa-eye");
-    togglePassword2.classList.toggle("fa-eye-slash");
-  });
+  <label for="address">住所<span>必須</span></label>
+  <div class="address">
+    <select id="pref" name="pref" required>
+      <option value="">都道府県</option>
+      <!-- 都道府県リストはそのままでOK -->
+      <option value="北海道">北海道</option>
+      <option value="青森県">青森県</option>
+      <option value="岩手県">岩手県</option>
+      <option value="宮城県">宮城県</option>
+      <option value="秋田県">秋田県</option>
+      <option value="山形県">山形県</option>
+      <option value="福島県">福島県</option>
+      <option value="茨城県">茨城県</option>
+      <option value="栃木県">栃木県</option>
+      <option value="群馬県">群馬県</option>
+      <option value="埼玉県">埼玉県</option>
+      <option value="千葉県">千葉県</option>
+      <option value="東京都">東京都</option>
+      <option value="神奈川県">神奈川県</option>
+      <option value="新潟県">新潟県</option>
+      <option value="富山県">富山県</option>
+      <option value="石川県">石川県</option>
+      <option value="福井県">福井県</option>
+      <option value="山梨県">山梨県</option>
+      <option value="長野県">長野県</option>
+      <option value="岐阜県">岐阜県</option>
+      <option value="静岡県">静岡県</option>
+      <option value="愛知県">愛知県</option>
+      <option value="三重県">三重県</option>
+      <option value="滋賀県">滋賀県</option>
+      <option value="京都府">京都府</option>
+      <option value="大阪府">大阪府</option>
+      <option value="兵庫県">兵庫県</option>
+      <option value="奈良県">奈良県</option>
+      <option value="和歌山県">和歌山県</option>
+      <option value="鳥取県">鳥取県</option>
+      <option value="島根県">島根県</option>
+      <option value="岡山県">岡山県</option>
+      <option value="広島県">広島県</option>
+      <option value="山口県">山口県</option>
+      <option value="徳島県">徳島県</option>
+      <option value="香川県">香川県</option>
+      <option value="愛媛県">愛媛県</option>
+      <option value="高知県">高知県</option>
+      <option value="福岡県">福岡県</option>
+      <option value="佐賀県">佐賀県</option>
+      <option value="長崎県">長崎県</option>
+      <option value="熊本県">熊本県</option>
+      <option value="大分県">大分県</option>
+      <option value="宮崎県">宮崎県</option>
+      <option value="鹿児島県">鹿児島県</option>
+      <option value="沖縄県">沖縄県</option>
+    </select>
+    <input type="text" id="city" name="city" required>
+    <input type="text" id="town" name="town" required>
+    <input type="text" id="buildings" name="buildings" required>
+  </div>
 
-  // 生年月日セレクト生成
-  const yearSelect = document.getElementById("year");
-  const monthSelect = document.getElementById("month");
-  const daySelect = document.getElementById("day");
+  <label for="phone">電話番号<span>必須</span></label>
+  <div class="phone">
+    <input type="tel" id="phone" name="phone" required>
+  </div>
 
-  for (let y = new Date().getFullYear(); y >= 1915; y--) {
-    const option = document.createElement("option");
-    option.value = y;
-    option.textContent = `${y}年`;
-    yearSelect.appendChild(option);
-  }
+  <label for="password">パスワード<span>必須</span></label>
+  <div class="password">
+    <input type="password" id="password" name="password" required>
+    <i id="togglePassword1" class="fa-solid fa-eye-slash eye"></i>
+  </div>
 
-  function updateDays() {
-    const year = parseInt(yearSelect.value);
-    const month = parseInt(monthSelect.value);
-    if (!year || !month) return;
+  <label for="password">パスワード(確認用)<span>必須</span></label>
+  <div class="password-onemore">
+    <input type="password" id="password-onemore" name="password-onemore" required>
+    <i id="togglePassword2" class="fa-solid fa-eye-slash eye"></i>
+  </div>
 
-    const daysInMonth = new Date(year, month, 0).getDate();
-    daySelect.innerHTML = '<option value="">日</option>';
-    for (let d = 1; d <= daysInMonth; d++) {
-      const option = document.createElement("option");
-      option.value = d;
-      option.textContent = `${d}日`;
-      daySelect.appendChild(option);
-    }
-  }
+  <label for="birth">生年月日<span>必須</span></label>
+  <div class="birth">
+    <select name="year" id="year" required>
+      <option value="">年</option>
+    </select>
+    <select name="month" id="month" required>
+      <option value="">月</option>
+      <option value="1">1月</option>
+      <option value="2">2月</option>
+      <option value="3">3月</option>
+      <option value="4">4月</option>
+      <option value="5">5月</option>
+      <option value="6">6月</option>
+      <option value="7">7月</option>
+      <option value="8">8月</option>
+      <option value="9">9月</option>
+      <option value="10">10月</option>
+      <option value="11">11月</option>
+      <option value="12">12月</option>
+    </select>
+    <select name="day" id="day" required>
+      <option value="">日</option>
+    </select>
+  </div>
 
-  yearSelect.addEventListener("change", updateDays);
-  monthSelect.addEventListener("change", updateDays);
-  updateDays(); // 初期表示
+  <button id="button" type="submit">登録する</button>
+</form>
+    </div>
+</body>
+</html>
 
-  // フォーム送信処理
-  const form = document.getElementById("form");
-  const submitButton = document.getElementById("button");
 
-  submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
 
-    const requiredFields = form.querySelectorAll("input[required]:not([type='hidden']), select[required]");
-    let isValid = true;
-    let missingFields = [];
-
-    requiredFields.forEach(field => {
-      if (!field.value.trim()) {
-        isValid = false;
-        missingFields.push(field);
-        field.classList.add("input-error");
-      } else {
-        field.classList.remove("input-error");
-      }
-    });
-
-    const password = passwordInput.value.trim();
-    const confirm = passwordInput2.value.trim();
-    if (password && confirm && password !== confirm) {
-      passwordInput.classList.add("input-password-error");
-      passwordInput2.classList.add("input-password-error");
-      alert("パスワードが一致していません。");
-      passwordInput2.focus();
-      return;
-    }
-
-    if (!isValid) {
-      alert("すべての必須項目を入力してください。");
-      missingFields[0].focus();
-      return;
-    }
-
-    // fetch送信
-    fetch("complete.php", {
-      method: "POST",
-      body: new FormData(form)
-    })
-      .then(res => res.json())
-      .then(data => {
-        if (data.status === "success") {
-          localStorage.setItem("userName", data.name);
-          localStorage.setItem("birth", data.birth);
-          localStorage.setItem("phone", data.phone);
-          localStorage.setItem("post-number", data.postnumber);
-          localStorage.setItem("address", data.address);
-          localStorage.setItem("loggedIn", "true");
-          window.location.href = "index.html";
-        } else {
-          alert("登録に失敗しました: " + data.message);
-        }
-      })
-      .catch(err => {
-        alert("通信エラーが発生しました。");
-        console.error(err);
-      });
-  });
-});
