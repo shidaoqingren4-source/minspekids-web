@@ -2,10 +2,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   // メールアドレスをlocalStorageから取得してhiddenにセット
   const email = localStorage.getItem("email");
-  const emailHidden = document.getElementById("email-hidden");
-  if (email && emailHidden) {
-    emailHidden.value = email;
+  if (email) {
+    document.getElementById("email-hidden").value = email;
   }
+
 
   // 郵便番号 → 住所自動入力
   const postInput = document.getElementById("post-number");
@@ -154,5 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
 
 
