@@ -1,11 +1,13 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  // メールアドレスをlocalStorageから取得してhiddenにセット
-  const email = localStorage.getItem("email");
+  // ✅ メールアドレスをURLパラメータから取得してhiddenにセット
+  const params = new URLSearchParams(window.location.search);
+  const email = params.get("email");
   const emailHidden = document.getElementById("email-hidden");
+
   if (email && emailHidden) {
     emailHidden.value = email;
   }
+
 
 
   // 郵便番号 → 住所自動入力
@@ -154,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
 
 
 
