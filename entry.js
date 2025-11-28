@@ -8,7 +8,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailFilled = emailInput.value.trim() !== "";
     const termsChecked = termsCheckbox.checked;
 
-    submitButton.disabled = !(emailFilled && termsChecked);
+   if (emailFilled && termsChecked) {
+    submitButton.classList.add("active");
+    submitButton.disabled = false;
+  } else {
+    submitButton.classList.remove("active");
+    submitButton.disabled = true;
+
+  }
   }
 
   emailInput.addEventListener("input", validateForm);
@@ -23,3 +30,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
