@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   const emailInput = document.getElementById("email");
   const termsCheckbox = document.getElementById("terms");
-  const submitButton = document.getElementById("submit-button");
+  const submitButton = document.getElementById("button");
   const form = document.getElementById("pre-register-form");
 
   function validateForm() {
@@ -30,4 +30,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
 
