@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("phone", data.phone);
           localStorage.setItem("post-number", data.postnumber);
           localStorage.setItem("address", data.address);
+          localStorage.setItem("email", document.getElementById("email-hidden").value); // ←追加！
           localStorage.setItem("loggedIn", "true");
           window.location.href = "index.html";
         } else {
@@ -156,6 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 });
+
 
 
 
