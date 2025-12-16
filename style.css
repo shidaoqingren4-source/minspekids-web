@@ -586,83 +586,89 @@ footer {
   z-index:999;
 }
 
-@media screen and (max-width: 768px) {
-  .right {
-    flex-wrap: wrap;
-    justify-content: center;
+/* スマホ用レスポンシブ */
+@media (max-width: 768px) {
+
+  header {
+    height: 55px;
+  }
+
+  .left img {
+    height: 55px;
+    margin-left: 10px;
   }
 
   .right figure {
+    font-size: 16px;
     margin: 5px;
-    font-size: 16px;
   }
 
-  .right figcaption {
-    font-size: 11px;
-  }
-
-  .right button {
-    margin: 10px auto;
-  }
-
-  .menu {
-    width: 100%;
-    top: 65px;
-  }
-
-  .menu li {
-    padding-left: 30px;
-    font-size: 16px;
-  }
-
-  .text1,
-  .text2 {
+  .text1, .text2 {
     font-size: 40px;
     left: 20px;
     right: 20px;
   }
 
   .slideshow {
-    width: 100%;
-    height: auto;
-    border-radius: 0;
-  }
-
-  .slide {
+    width: 95%;
     height: auto;
   }
 
-  .about h1,
-  .how-to-use h1,
-  .sign-up h1 {
-    font-size: 50px;
-    letter-spacing: 2px;
-  }
-
-  .introduction1 h2,
-  .introduction2 h2,
-  .introduction3 h2 {
-    font-size: 20px;
-  }
-
-  .introduction2 h3 {
-    width: auto;
-    margin-left: 20px;
-    font-size: 22px;
-  }
-
-  .account {
+  #first, #second {
+    width: 95%;
     flex-direction: column;
     align-items: center;
     gap: 20px;
   }
 
-  .account h3 {
+  #first img, #second img {
+    width: 100%;
+    height: auto;
+  }
+
+  .text-block {
+    height: auto;
+    text-align: center;
+  }
+
+  .about h1,
+  .how-to-use h1,
+  .sign-up h1,
+  .search h1 {
+    font-size: 40px;
+    letter-spacing: 2px;
+  }
+
+  .introduction1 h2,
+  .introduction2 h2,
+  .introduction3 h2,
+  .introduction4 h2 {
+    font-size: 18px;
+  }
+
+  .account {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .account h3,
+  .search-button h3 {
     width: 90%;
     font-size: 18px;
-    height: 45px;
+  }
+
+  footer {
+    height: auto;
+    padding: 20px;
+  }
+
+  .footer {
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 50px;
   }
 }
+
 
 
 
