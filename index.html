@@ -102,33 +102,23 @@
             L1200,200 L0,200 Z" />
              </svg>
         </div>
-        <section class="introduction2" id="introduction2">
-            <div class="how-to-use">
-                <h1>How<span> </span>to<span> </span>use</h1>
-            </div>
-            <h2>"こども秘密基地"の使い方</h2>
-            <h3>保護者の方へ</h3>
-            <p>ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります</p>
-            <h3>ボランティアの方へ</h3>
-            <p>ここに説明が入りますここに説明が入りますここに説明が入りますここに説明が入ります</p>
-        </section>
-           <div class="wave-container">
-            <svg class="wave" viewBox="0 0 1200 200" preserveAspectRatio="none">
-            <path d="M0,100 
-            C150,0 300,200 450,100 
-            C600,0 750,200 900,100 
-            C1050,0 1200,200 1350,100 
-            L1200,200 L0,200 Z" />
-             </svg>
-        </div>
         <section class="introduction3" id="introduction3">
             <div class="sign-up">
                 <h1>Sign<span> </span>up</h1>
             </div>
             <h2>アカウント登録</h2>
             <div class="account">
-                <h3 onclick="location.href='entry.html'">アカウントをお持ちでない方</h3>
-                <h3 onclick="location.href='login.html'">既にアカウントをお持ちの方</h3>
+                <div class="new" onclick="location.href='entry.html'">
+                    <i id="new" class="fa-solid fa-user-plus"></i>
+                    <h3>アカウントをお持ちでない方</h3>
+                    <p>アカウントをお持ちでない方は、<br>アカウントを作成していただく必要があります</p>
+                </div>
+                <div class="already" onclick="location.href='login.html'">
+                    <i id="already" class="fa-solid fa-user"></i>
+                    <h3>既にアカウントをお持ちの方</h3>
+                    <p>既にアカウントをお持ちの方は、<br>ログインをしていただく必要があります</p>
+                </div>
+                
             </div>
         </section>
         <div class="wave-container">
@@ -170,6 +160,7 @@
 </body>
 
 </html>
+
 
 
 
