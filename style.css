@@ -454,38 +454,55 @@ mask-composite: intersect;
     margin-bottom: 30px;
 }
 
-.introduction3 p{
-    max-width: 800px;
-    margin: 0 auto;
-}
-
 .account{
     display: flex;
     font-size: 20px;
     max-width: 850px;
     margin: 0 auto;
     gap: 50px;
-    cursor: pointer;
+    margin-top: 20px;
 }
 
-.account h3{
-    background-color: #FFF8E7;
-    border-radius: 50px;
-    height: 50px;
+.new,.already{
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 500px;
     width: 400px;
     color: black;
-    display: flex;
     text-align: center;
-    align-items: center;
     justify-content: center;
+    cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.1s ease;
 }
 
-.account  :hover{
-    background-color:#3E665A;
-    color: white;
-    transform: scale(1.05);
+#new,#already{
+    text-align: center;
+    justify-content: center;
+    font-size: 60px;
+    margin-top: 60px;
+    color: #3E665A;
+}
+
+.account h3 {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  position: relative; /* 疑似要素を使うために必要 */
+}
+
+.account h3::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100px;              /* ★ここを好きな長さに調整できる */
+  height: 2px;
+  background-color: #3E665A; /* 元の線の色 */
+  margin-top: 25px;           /* h3 との間隔 */
+}
+
+.account p{
+  font-size: 13px;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 45px;
 }
 
 .introduction4{
@@ -668,6 +685,7 @@ footer {
     padding-top: 50px;
   }
 }
+
 
 
 
