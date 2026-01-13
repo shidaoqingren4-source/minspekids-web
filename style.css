@@ -232,10 +232,6 @@ mask-composite: intersect;
   fill:#A8D5BA ;
 }
 
-.wave-container:nth-of-type(5) .wave path {
-  fill:#FFF8E7 ;
-}
-
 .introduction1{
     position: relative;
     padding-top: 120px;
@@ -407,9 +403,9 @@ mask-composite: intersect;
 .introduction3{
     position: relative;
     padding-top: 120px;
-    height:500px;
+    height:800px;
     width:100%;
-    background-color:#A8D5BA;
+    background-color:#FFF8E7;
     margin: 0;
     color: rgb(0, 0, 0);
     font-weight: bold;
@@ -685,6 +681,7 @@ footer {
     padding-top: 50px;
   }
 }
+
 
 
 
