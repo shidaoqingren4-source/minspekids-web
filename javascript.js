@@ -328,8 +328,9 @@ document.getElementById("check-button").addEventListener("click", function (e) {
     window.location.href = "login.html";
     return;
   }
-  window.location.href = "reservation.html";
+  window.location.href = "mypage.html";
 });
+
 
 
 
