@@ -141,11 +141,25 @@
                     <h3>施設をさがす</h3>
                     <p>条件に合った施設を素早く検索できます</p>
                 </div>
-                <div class="check" id="check-button">
-                    <i id="check" class="fa-solid fa-school"></i>
-                    <h3>予約を確認する</h3>
-                    <p>予約中の施設や、予約情報を確認できます</p>
+                <div class="check" id="checkDiv">
+                      <i class="fa-solid fa-school"></i>
+                      <h3>予約を確認する</h3>
+                      <p>予約中の施設や、予約情報を確認できます</p>
                 </div>
+
+                <script>
+                    document.getElementById("checkDiv").addEventListener("click", function () {
+                      const isLoggedIn = localStorage.getItem("loggedIn");
+                    
+                      if (isLoggedIn !== "true") {
+                        window.location.href = "login.html";
+                        return;
+                      }
+                    
+                      // ログイン済みなら予約確認ページへ
+                      window.location.href = "reservation_check.html";
+                    });
+                </script>
                 
             </div>
         </section>
@@ -169,6 +183,7 @@
 </body>
 
 </html>
+
 
 
 
