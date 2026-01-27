@@ -320,16 +320,21 @@ document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
 
-document.getElementById("check-button").addEventListener("click", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", function () {
+  const checkDiv = document.getElementById("check-button");
 
-  const isLoggedIn = localStorage.getItem("loggedIn");
-  if (isLoggedIn !== "true") {
-    window.location.href = "login.html";
-    return;
-  }
-  window.location.href = "mypage.html";
+  checkDiv.addEventListener("click", function () {
+    const isLoggedIn = localStorage.getItem("loggedIn");
+
+    if (isLoggedIn !== "true") {
+      window.location.href = "login.html";
+      return;
+    }
+
+    window.location.href = "mypage.html";
+  });
 });
+
 
 
 
