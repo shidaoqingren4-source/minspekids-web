@@ -1,14 +1,3 @@
-document.getElementById("check-button").addEventListener("click", function (e) {
-  e.preventDefault();
-
-  const isLoggedIn = localStorage.getItem("loggedIn");
-  if (isLoggedIn !== "true") {
-    window.location.href = "login.html";
-    return;
-  }
-  window.location.href = "reservation.html";
-});
-
 
 const button = document.querySelector('#button');
 const menu = document.querySelector('#menu');
@@ -331,6 +320,16 @@ document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
 
+document.getElementById("check-button").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const isLoggedIn = localStorage.getItem("loggedIn");
+  if (isLoggedIn !== "true") {
+    window.location.href = "login.html";
+    return;
+  }
+  window.location.href = "reservation.html";
+});
 
 
 
