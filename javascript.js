@@ -323,16 +323,18 @@ document.getElementById("inquiry").addEventListener("click", function() {
 document.addEventListener("DOMContentLoaded", function () {
   const checkButton = document.getElementById("check-button");
 
-  checkButton.addEventListener("click", function () {
-    const isLoggedIn = localStorage.getItem("loggedIn");
+  if (checkButton) {
+    checkButton.addEventListener("click", function () {
+      const isLoggedIn = localStorage.getItem("loggedIn");
 
-    if (isLoggedIn !== "true") {
-      window.location.href = "login.html";
-      return;
-    }
+      if (isLoggedIn !== "true") {
+        window.location.href = "login.html";
+        return;
+      }
 
-    window.location.href = "mypage.html";
-  });
+      window.location.href = "mypage.html";
+    });
+  }
 });
 
 
