@@ -32,7 +32,6 @@ document.getElementById("reservationForm").addEventListener("submit", function (
 
   const isLoggedIn = localStorage.getItem("loggedIn");
   if (isLoggedIn !== "true") {
-    alert("予約にはログインが必要です。ログイン画面に移動します。");
     window.location.href = "login.html";
     return;
   }
@@ -165,3 +164,4 @@ document.getElementById("nextMonth").onclick = () => {
 };
 
 renderCalendar(currentDate);
+
