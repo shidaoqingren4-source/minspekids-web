@@ -321,9 +321,9 @@ document.getElementById("inquiry").addEventListener("click", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const checkDiv = document.getElementById("check-button");
+  const checkButton = document.getElementById("check-button");
 
-  checkDiv.addEventListener("click", function () {
+  checkButton.addEventListener("click", function () {
     const isLoggedIn = localStorage.getItem("loggedIn");
 
     if (isLoggedIn !== "true") {
@@ -334,6 +334,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.location.href = "mypage.html";
   });
 });
+
 
 
 
