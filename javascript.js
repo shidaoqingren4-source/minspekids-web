@@ -1,4 +1,8 @@
-
+const isLoggedIn = localStorage.getItem("loggedIn");
+  if (isLoggedIn !== "true") {
+    window.location.href = "login.html";
+    return;
+  }
 
 const button = document.querySelector('#button');
 const menu = document.querySelector('#menu');
@@ -320,6 +324,7 @@ document.getElementById("cityInput").addEventListener("keydown", function (event
 document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
+
 
 
 
