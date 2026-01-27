@@ -320,17 +320,21 @@ document.getElementById("inquiry").addEventListener("click", function() {
   window.location.href = "index.html"; // 遷移先のURL
 });
 
-document.getElementById("check-button").addEventListener("click", function () {
-  const isLoggedIn = localStorage.getItem("loggedIn");
+document.addEventListener("DOMContentLoaded", function () {
+  const checkDiv = document.getElementById("check-button");
 
-  if (isLoggedIn !== "true") {
-    window.location.href = "login.html";
-    return;
-  }
+  checkDiv.addEventListener("click", function () {
+    const isLoggedIn = localStorage.getItem("loggedIn");
 
-  // ログイン済みなら予約確認ページへ
-  window.location.href = "mypage.html";
+    if (isLoggedIn !== "true") {
+      window.location.href = "login.html";
+      return;
+    }
+
+    window.location.href = "mypage.html";
+  });
 });
+
 
 
 
