@@ -547,36 +547,55 @@ mask-composite: intersect;
     margin-bottom: 30px;
 }
 
-.introduction4 p{
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.search-button{
+.search-yet{
+    display: flex;
     font-size: 20px;
-    max-width: 400px;
+    max-width: 850px;
     margin: 0 auto;
-    cursor: pointer;
+    gap: 50px;
+    margin-top: 20px;
 }
 
-.search-button h3{
-    background-color: #A8D5BA;
-    border-radius: 50px;
-    height: 50px;
+.search-yet-button,.check{
+    background-color: rgba(255, 255, 255, 0.7);
+    height: 500px;
     width: 400px;
     color: black;
-    display: flex;
     text-align: center;
-    align-items: center;
     justify-content: center;
+    cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: all 0.1s ease;
 }
 
-.search-button  :hover{
-    background-color:#3E665A;
-    color: white;
-    transform: scale(1.05);
+#search-yet-button,#check{
+    text-align: center;
+    justify-content: center;
+    font-size: 60px;
+    margin-top: 60px;
+    color: #3E665A;
+}
+
+.search-yet h3 {
+  margin-top: 40px;
+  padding-bottom: 20px;
+  position: relative; /* 疑似要素を使うために必要 */
+}
+
+.search-yet h3::after {
+  content: "";
+  display: block;
+  margin: 0 auto;
+  width: 100px;              /* ★ここを好きな長さに調整できる */
+  height: 2px;
+  background-color: #3E665A; /* 元の線の色 */
+  margin-top: 25px;           /* h3 との間隔 */
+}
+
+.search-yet p{
+  font-size: 13px;
+  width: 300px;
+  margin: 0 auto;
+  padding-top: 45px;
 }
 
 footer {
@@ -681,6 +700,7 @@ footer {
     padding-top: 50px;
   }
 }
+
 
 
 
