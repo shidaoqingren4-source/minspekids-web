@@ -1,5 +1,6 @@
 body{
     margin: 0;
+    overflow-x: hidden;
 }
 
 header{
@@ -620,48 +621,148 @@ footer {
 
 /* スマホ用レスポンシブ */
 @media screen and (max-width: 480px) {
-
+    
   header {
     height: 55px;
     width: 100%;
   }
 
   .left img {
-    height: 55px;
+    width: 100%;
     margin-left: 10px;
   }
 
   .right figure {
     font-size: 16px;
     margin: 5px;
+    margin-top: 10px;
   }
 
-  .text1, .text2 {
-    font-size: 40px;
+  .right button{
+    margin-top: 0px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .menu{
+    top: 55px;
+  }
+
+  .text1{
+    font-size: 30px;
     left: 20px;
+  }
+  
+  .text2{
+    font-size: 30px;
+    top: 355px;
     right: 20px;
   }
 
   .slideshow {
-    width: 95%;
-    height: auto;
+    width: 100%;
+    height:300px;
+  }
+
+  .picture{
+    width: 100%;
+    height: 400px;
+  }
+
+  .wave-container{
+    width: 100%;
+    height: 75px;
+  }
+
+  .introduction1{
+    padding-top: 50px;
+    height: 1420px;
+  }
+
+  .about{
+    margin-top: 0px;
   }
 
   #first, #second {
-    width: 95%;
+    width: 79.2%;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    padding: 30px;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    gap: 0px;
   }
 
   #first img, #second img {
     width: 100%;
-    height: auto;
+    height: 200px;
+    margin-right: 0px;
+    margin-bottom: 5px;
   }
 
   .text-block {
     height: auto;
     text-align: center;
+    padding: 0px;
+  }
+
+  .text-block h3{
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .text-block p{
+    font-size: 12px;
+    line-height: 25px;
+    text-align: left;
+  }
+
+  .introduction3{
+    padding-top: 50px;
+    height: 750px;
+  }
+
+  .new,.already,.search-yet-button,.check{
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+
+  #new,#already,#search-yet-button,#check{
+    margin: 0 auto;
+    margin-top: 30px;
+  }
+
+  .account h3{
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  .account p{
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .search-yet h3{
+    margin: 0 auto;
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+  }
+
+  .search-yet p{
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+
+  .introduction4{
+    padding-top: 50px;
+    height: 750px;
   }
 
   .about h1,
@@ -670,6 +771,7 @@ footer {
   .search h1 {
     font-size: 40px;
     letter-spacing: 2px;
+    margin-bottom: 5px;
   }
 
   .introduction1 h2,
@@ -679,12 +781,13 @@ footer {
     font-size: 18px;
   }
 
-  .account {
+  .account ,.search-yet{
     flex-direction: column;
-    gap: 20px;
+    gap: 5px;
+    padding-right: 7.5px;
+    padding-left: 7.5px;
   }
 
-  .account h3,
   .search-button h3 {
     width: 90%;
     font-size: 18px;
@@ -699,8 +802,8 @@ footer {
     flex-direction: column;
     gap: 15px;
     padding-top: 50px;
-  }
-}
+  }}
+
 
 
 
