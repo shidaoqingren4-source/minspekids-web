@@ -619,10 +619,11 @@ footer {
 }
 
 /* スマホ用レスポンシブ */
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
 
   header {
     height: 55px;
+    width: 100%;
   }
 
   .left img {
@@ -700,6 +701,7 @@ footer {
     padding-top: 50px;
   }
 }
+
 
 
 
