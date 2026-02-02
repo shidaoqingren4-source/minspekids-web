@@ -145,22 +145,7 @@
                       <i id="check" class="fa-solid fa-school"></i>
                       <h3>予約を確認する</h3>
                       <p>予約中の施設や、予約情報を確認できます</p>
-                </div>
-
-                <script>
-                    document.getElementById("checkDiv").addEventListener("click", function () {
-                      const isLoggedIn = localStorage.getItem("loggedIn");
-                    
-                      if (isLoggedIn !== "true") {
-                        window.location.href = "login.html";
-                        return;
-                      }
-                    
-                      // ログイン済みなら予約確認ページへ
-                      window.location.href = "mypage.html";
-                    });
-                </script>
-                
+                </div>                
             </div>
         </section>
         <div class="wave-container">
@@ -183,6 +168,7 @@
 </body>
 
 </html>
+
 
 
 
