@@ -628,7 +628,7 @@ footer {
   }
 
   .left img {
-    width: 100%;
+    width: 20%;
     margin-left: 10px;
   }
 
@@ -683,10 +683,13 @@ footer {
     margin-top: 0px;
   }
 
+  #about{
+    padding-left:7.5px;
+    padding-right:7.5px;
+  }
+    
   #first, #second {
-    width: 79.2%;
-    margin-left: 7.5px;
-    margin-right: 7.5px;
+    width: 100%;
     padding: 30px;
     flex-direction: column;
     gap: 0px;
@@ -803,6 +806,7 @@ footer {
     gap: 15px;
     padding-top: 50px;
   }}
+
 
 
 
