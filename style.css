@@ -627,11 +627,12 @@ footer {
     width: 100%;
   }
 
-  .left img {
+.left img {
     width: 20%;
-    height:100%;
-    margin-left: 5px;
-  }
+    height: auto;
+    margin-left: 10px;
+    object-fit: contain;
+}
 
   .right figure {
     font-size: 16px;
@@ -803,6 +804,7 @@ footer {
     gap: 15px;
     padding-top: 50px;
   }}
+
 
 
 
