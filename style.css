@@ -629,7 +629,8 @@ footer {
 
   .left img {
     width: 20%;
-    margin-left: 10px;
+    height:100%;
+    margin-left: 5px;
   }
 
   .right figure {
@@ -802,6 +803,7 @@ footer {
     gap: 15px;
     padding-top: 50px;
   }}
+
 
 
 
