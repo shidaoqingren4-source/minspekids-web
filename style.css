@@ -683,16 +683,12 @@ footer {
     margin-top: 0px;
   }
 
-  #about{
-    padding-left:7.5px;
-    padding-right:7.5px;
-  }
-    
   #first, #second {
-    width: 100%;
-    padding: 30px;
+    width: calc(100% - 15px); 
+    padding: 15px;
     flex-direction: column;
     gap: 0px;
+    box-sizing: border-box;
   }
 
   #first img, #second img {
@@ -806,6 +802,7 @@ footer {
     gap: 15px;
     padding-top: 50px;
   }}
+
 
 
 
